@@ -19,7 +19,7 @@ header {
   margin: auto;
   margin-left: 45%;
   width: 25;
-  max-width: 30%;
+  max-width: 28%;
 }
 
 #headertext {
@@ -49,13 +49,23 @@ header {
 }
 
 .menu {
+  size: 1em;
   position: fixed;
   z-index: 2;
-  top: 20px;
-  margin-left: 80%;
-  color:beige;
+
+  display: block;
+  border-radius: 10%;
+  top: 10px;
+  margin-left: 85%;
+  text-align: center;
   background-color:#016144;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 110px;
+  height: auto;
 }
+
 /*Portfolio*/
 .menuportfolio:link {
   color: beige;
@@ -64,6 +74,9 @@ header {
   color: beige;
 }
 .menuportfolio:hover {
+  color:black;
+}
+.menuportfolio:active {
   color:black;
 }
  
@@ -129,3 +142,15 @@ a {
   width: 280px;
   height: 280px;
 }
+
+/*
+#secret {
+  z-index: 1;
+  position: fixed;
+  margin: auto;
+  margin-top: -300px;
+  margin-left: 5%;
+  width: 100px;
+  height: auto;
+}
+*/
