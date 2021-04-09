@@ -8,6 +8,7 @@ header {
   letter-spacing: -15px;
   position: relative;
   margin: auto;
+  top: 10px;
   text-align: center;
 }
 
@@ -19,7 +20,7 @@ header {
   margin: auto;
   margin-left: 45%;
   width: 25;
-  max-width: 28%;
+  max-width: 25%;
 }
 
 #headertext {
@@ -48,6 +49,26 @@ header {
   filter: invert(0%) sepia(100%) saturate(7465%) hue-rotate(318deg) brightness(111%) contrast(103%);
 }
 
+.lightbulb {
+  z-index: 2;
+  position: absolute;
+  margin: auto;
+  margin-left: 6.9%;
+  margin-top: -14.5%;
+  width: 2em;
+  max-width:100%;
+}
+
+.lightbulb:hover {
+  background: #ffee00;
+  color: #ffee00;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ffee00,
+              0 0 50px #ffee00,
+              0 0 100px #ffee00,
+              0 0 200px #ffee00;
+}
+
 .menu {
   size: 1em;
   position: fixed;
@@ -58,7 +79,7 @@ header {
   top: 10px;
   margin-left: 85%;
   text-align: center;
-  background-color:#016144;
+  background: linear-gradient(#18213a, #243b55);
 
   padding-top: 10px;
   padding-bottom: 10px;
@@ -74,7 +95,7 @@ header {
   color: beige;
 }
 .menuportfolio:hover {
-  color:black;
+  color: black;
 }
 .menuportfolio:active {
   color:black;
@@ -102,6 +123,21 @@ header {
   color:black;
 }
 
+.up_arrow {
+  filter: invert(0%) sepia(100%) saturate(7465%) hue-rotate(318deg) brightness(111%) contrast(103%);
+  z-index: 2;
+  position: fixed;
+  margin: auto;
+  margin-left: 40%;
+  margin-top: 1%;
+  width: 3em;
+  max-width: 100%;
+  bottom: 20px;
+}
+.up_arrow:hover {
+  filter: invert(19%) sepia(14%) saturate(1867%) hue-rotate(172deg) brightness(98%) contrast(91%);
+}
+
 body {
     background-image: url("./media/bg.png");
     background-repeat: repeat;
@@ -112,11 +148,22 @@ body {
     width: 800px;
     margin: auto;
 }
+  footer {
+    width: 800px;
+    height: 100px;
+    margin: auto;
+    margin-top: 70px;
+  }
   p {
     color: #666666;
 }
   h3 {
   color: #363636;
+  }
+  h1 {
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
 }
 a {
   text-decoration: none;
@@ -130,10 +177,10 @@ a {
   width: 800px;
   height: 800px;
   border-radius: 50%;
-  background: #016144;
+    background: linear-gradient(#030407, #243b55);
 }
 
-#splatter {
+.splatter {
   z-index: 1;
   position: absolute;
   margin: auto;
@@ -142,6 +189,24 @@ a {
   width: 280px;
   height: 280px;
 }
+
+.picture01 {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  padding: 5px;
+  margin-left: 1px;
+  background-size: cover;
+}
+.picture02 {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  padding: 5px;
+  margin-left: 1px;
+  background-size: cover;
+}
+
 
 /*
 #secret {
@@ -154,3 +219,8 @@ a {
   height: auto;
 }
 */
+
+.copyright {
+  color: #666666;
+  text-align: center; 
+}
