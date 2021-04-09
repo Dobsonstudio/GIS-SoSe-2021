@@ -1,8 +1,131 @@
+header {
+  height: 500px;
+}
+#headline {
+  font-size: 8em;
+  z-index: 2;
+  color: beige;
+  letter-spacing: -15px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+#headersubtitle {
+  font-size: 2em;
+  z-index: 2;
+  color: beige;
+  position: relative;
+  margin: auto;
+  margin-left: 45%;
+  width: 25;
+  max-width: 30%;
+}
+
+#headertext {
+  font-size: 1em;
+  z-index: 2;
+  color: #f5f5dc;
+  position: relative;
+  margin: auto;
+  margin-left: 45%;
+  margin-top: .5%;
+  width: 25em;
+  max-width:20%;
+}
+
+.facebook {
+  filter: invert(95%) sepia(8%) saturate(482%) hue-rotate(15deg) brightness(104%) contrast(92%);
+  z-index: 2;
+  position: relative;
+  margin: auto;
+  margin-left: 45%;
+  margin-top: 1%;
+  width: 2em;
+  max-width:100%;
+}
+.facebook:hover {
+  filter: invert(0%) sepia(100%) saturate(7465%) hue-rotate(318deg) brightness(111%) contrast(103%);
+}
+
+.menu {
+  position: fixed;
+  z-index: 2;
+  top: 20px;
+  margin-left: 80%;
+  color:beige;
+  background-color:#016144;
+}
+/*Portfolio*/
+.menuportfolio:link {
+  color: beige;
+}
+.menuportfolio:visited {
+  color: beige;
+}
+.menuportfolio:hover {
+  color:black;
+}
+ 
+/*Kontakt*/
+.menukontakt:link {
+  color: beige;
+}
+.menukontakt:visited {
+  color: beige;
+}
+.menukontakt:hover {
+  color:black;
+}
+
+/*Über Mich*/
+.menuuebermich:link {
+  color: beige;
+}
+.menuuebermich:visited {
+  color: beige;
+}
+.menuuebermich:hover {
+  color:black;
+}
+
 body {
-    background-image: url("/Aufgabe_1.3/media/bg.png");
-  }
-  
+    background-image: url("./media/bg.png");
+    background-repeat: repeat;
+    margin: auto;
+    font-family: sans-serif;
+} 
+  main {
+    width: 800px;
+    margin: auto;
+}
+  p {
+    color: #666666;
+}
   h3 {
-    color: navy;
-    margin-left: 20px;
-  }
+  color: #363636;
+}
+a {
+  text-decoration: none;
+}
+
+#greencircle {
+  z-index: 1;
+  position: absolute;
+  top: -400px;
+  left: auto;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: #016144;
+}
+
+#splatter {
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  margin-top: -400px;
+  margin-left: -1%;
+  width: 280px;
+  height: 280px;
+}
