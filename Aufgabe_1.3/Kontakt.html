@@ -34,63 +34,41 @@
       <div id="greencircle"></div>
       <img src="./media/splatter.png" class="splatter"></a>
 
-        <article>
-        <h2><cite>Kontakt</cite></h2>
-        <h3>Wie können Sie mich kontaktieren?</h3>
-        <p>Spoiler: das ist garnicht so einfach...</p>
-        <p>Kontaktieren Sie mich gernem, wenn Sie fragen zu folgenden Themen haben</p>
-        <ul>
-            <li>Weltfrieden</li>
-            <li>Kunst</li>
-            <li>Pfannkuchen</li>
-          </ul>
-        </article>
+          <article>
+            <h1>KONTAKT</h1>
+          <p id="textcolor">Wenn Sie Fragen zu meiner Kunst haben, bitte kontaktieren Sie mich.</p>
+          </article>
 
-    <div>
-        <form action="/action_page.php">
-            <label for="vorname">Vorname</label>
-            <input type="text" id="vorname" name="vorname" value="Max">
-            <label for="nachname">Nachname</label>
-            <input type="text" id="nachname" name="nachname" value="Mustermann">
-            <label for="nachname">Nachricht</label>
-            <input type="text" id="nachricht" name="nachricht" value="Nachricht">
-            <input type="submit" value="Absenden">
-          </form>
-    </div>
+          <div>
+            <form>
+              <label for="vorname">Vorname</label>
+              <input type="text" id="vornamename" placeholder="Max">
+              <label for="nachname">Nachname</label>
+              <input type="text" id="nachname" placeholder="Mustermann">
+              <label for="email">E-Mail Adresse</label>
+              <input type="text" id="email" placeholder="Maxmuster69@gmail.com">
           
-    <h3>Auf diesen Ausstellungen werden meine Werke bald zu sehen sein</h3>      
-    <table>
-        <tr>
-            <th>Ort</th>
-            <th>Ausstellung</th>
-            <th>Datum</th>
-          </tr>
-          <tr>
-            <td>Rottweil</td>
-            <td>Parkhaus</td>
-            <td>01.08.2021</td>
-          </tr>
-          <tr>
-            <td>Furtwangen</td>
-            <td>HFU Furtwangen</td>
-            <td>09.09.2021</td>
-          </tr>
-          <tr>
-            <td>Berlin</td>
-            <td>Kunsthaus Siedler</td>
-            <td>09.12.2021</td>
-          </tr>
-        </table>
-        <mark>Das Leben ist tschön!</mark>
-    </main>
-<hr>
-    <footer>
-        <details><summary><label>Ein Geheimnis über mich</label></summary>
-        <p>Ich bin sehr schüchtern</p>
-        </details>
-        <p>© 2021 Benjamin Siedler</p>
-    </footer>
+              <label for="thema">Thema</label>
+              <select id="thema">
+                <option value="placeholder">Bitte auswählen</option>
+                <option value="kunst">Kunst</option>
+                <option value="pfannkuchen">Pfannkuchen</option>
+                <option value="gis">Grundlagen Interaktiver Systeme</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
 
+              <label for="nachricht">Nachricht</label>
+              <input type="text" id="nachricht" placeholder="Ihre Nachricht">
+            
+              <input type="submit" value="Absenden">
+            </form>
+          </div>
 
-</body>
-</html>
+        </main>
+        <footer>
+                <p class="copyright">© 2021 BENJAMIN SIEDLER</p>
+        </footer>
+    
+    
+    </body>
+    </html>

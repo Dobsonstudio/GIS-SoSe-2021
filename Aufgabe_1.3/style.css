@@ -20,7 +20,7 @@ header {
   margin: auto;
   margin-left: 45%;
   width: 25;
-  max-width: 25%;
+  max-width: 20%;
 }
 
 #headertext {
@@ -47,26 +47,6 @@ header {
 }
 .facebook:hover {
   filter: invert(0%) sepia(100%) saturate(7465%) hue-rotate(318deg) brightness(111%) contrast(103%);
-}
-
-.lightbulb {
-  z-index: 2;
-  position: absolute;
-  margin: auto;
-  margin-left: 6.9%;
-  margin-top: -14.5%;
-  width: 2em;
-  max-width:100%;
-}
-
-.lightbulb:hover {
-  background: #ffee00;
-  color: #ffee00;
-  border-radius: 50%;
-  box-shadow: 0 0 25px #ffee00,
-              0 0 50px #ffee00,
-              0 0 100px #ffee00,
-              0 0 200px #ffee00;
 }
 
 .menu {
@@ -207,6 +187,31 @@ a {
   background-size: cover;
 }
 
+input[type=text], select {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 10px 0px;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus {
+  border: 3px solid #666666;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #243b55;
+  color: beige;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+}
+
+input[type=submit]:hover {
+  color: black;
+}
 
 /*
 #secret {
