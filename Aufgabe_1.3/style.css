@@ -19,7 +19,7 @@ header {
   position: relative;
   margin: auto;
   margin-left: 45%;
-  width: 25;
+  width: 24%;
   max-width: 20%;
 }
 
@@ -50,7 +50,7 @@ header {
 }
 
 .menu {
-  size: 1em;
+  font-size: 1em;
   position: fixed;
   z-index: 2;
 
