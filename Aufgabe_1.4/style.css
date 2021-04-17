@@ -130,12 +130,13 @@ body {
     margin: auto;
 }
   footer {
+    color: #666666;
     width: 800px;
     height: 100px;
     margin: auto;
     margin-top: 70px;
   }
-  p {
+  p ~ h1 {
     color: #666666;
 }
   h3 {
@@ -148,6 +149,9 @@ body {
 }
 a {
   text-decoration: none;
+}
+article>h1 {
+  color: #363636;
 }
 
 #greencircle {
@@ -252,6 +256,11 @@ input[type=submit]:hover {
   to {background-color: #1f4425; margin-left: 0px;}
 }
 
+@keyframes splatter {
+  from {background-color: black; margin-left: -1000px;}
+  to {background-color: #1f4425; margin-left: 0px;}
+}
+
 /* testing */
 
 .onAppearleft {
@@ -270,17 +279,6 @@ input[type=submit]:hover {
   animation-iteration-count: 1;
 }
 
-@media only screen and (max-width: 600px) {
-  #headline {font-size: 6em; letter-spacing: -11px;}
-  #headersubtitle {font-size: 1em; max-width: 1000px; margin-left: 35%; margin-top: 1%}
-  #headertext {font-size: 1em; max-width: 300px; margin-left: 35%; margin-top: 2%}
-  .splatter {max-width: 200px; max-height: 200px; margin-left: -10%;}
-  #greencircle {max-height: 500px; max-width: 500px; margin-top: 250px;}
-  .facebook {margin-top: 3%; margin-left: 35%;}
-  main {width: 400px; max-width: 400px; margin: auto;}
-  .menu {position: fixed; margin-left: 6.5%; margin-top: 22.5%; background-color: black;}
-  }
-
 @media only screen and (max-width: 1024px) {
     #headline {font-size: 6em; letter-spacing: -11px;}
     #headersubtitle {font-size: 1.5em; max-width: 1000px; margin-left: 40%; margin-top: .5%}
@@ -288,8 +286,22 @@ input[type=submit]:hover {
     .splatter {max-width: 220px; max-height: 220px; margin-left: -5%;}
     #greencircle {max-height: 600px; max-width: 600px; margin-top: 150px;}
     .facebook {margin-top: 1.5%; margin-left: 40%;}
-  
     main {width: 600px; max-width: 600px; margin: auto;}
     .menu {position: fixed; margin-left: 70%; margin-top: 30%; background-color: black;}
+    }
+
+    @media only screen and (max-width: 600px) {
+      #headline {font-size: 6em; letter-spacing: -11px;}
+      #headersubtitle {font-size: 1em; max-width: 1000px; margin-left: 35%; margin-top: 1%}
+      #headertext {font-size: 1em; max-width: 300px; margin-left: 35%; margin-top: 2%}
+      .splatter {max-width: 200px; max-height: 200px; margin-left: -10%;}
+      #greencircle {max-height: 500px; max-width: 500px; margin-top: 250px;}
+      .facebook {margin-top: 3%; margin-left: 35%;}
+      main {width: 500px; max-width: 500px;}
+      .menu {position: relative; margin-left: 6.5%; margin-top: 22.5%; background-color: black;}
+      }
+
+    article p {
+      color: #666666;
     }
 
