@@ -109,11 +109,12 @@ header {
   z-index: 2;
   position: fixed;
   margin: auto;
-  margin-left: 40%;
+  margin-left: 45%;
   margin-top: 1%;
   width: 3em;
   max-width: 100%;
   bottom: 20px;
+  opacity: 50%;
 }
 .up_arrow:hover {
   filter: invert(20%) sepia(55%) saturate(439%) hue-rotate(78deg) brightness(95%) contrast(94%);
@@ -152,6 +153,16 @@ a {
 }
 article>h1 {
   color: #363636;
+}
+.flexbild {
+  max-width: 200px;
+  padding: 5px;
+}
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
 }
 
 #greencircle {
@@ -244,7 +255,7 @@ input[type=submit]:hover {
 
 .copyright {
   color: #666666;
-  text-align: center; 
+  margin: auto;
 }
 
 #formprivacy {
@@ -261,25 +272,7 @@ input[type=submit]:hover {
   to {background-color: #1f4425; margin-left: 0px;}
 }
 
-/* testing */
-
-.onAppearleft {
-  width: 100%;
-  height: auto;
-  padding: 5px;
-  margin-left: -2000px;
-  background-size: cover;
-  transition: transform 1000ms;
-  transform: translate3d(0px 0px, 0px);
-  animation-iteration-count: 1;
-}
-
-.visible {
-  transform: translate3d(1995px, 0px, 0px);
-  animation-iteration-count: 1;
-}
-
-@media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1024px) {
     #headline {font-size: 6em; letter-spacing: -11px;}
     #headersubtitle {font-size: 1.5em; max-width: 1000px; margin-left: 40%; margin-top: .5%}
     #headertext {font-size: 1em; max-width: 300px; margin-left: 40%; margin-top: 1%}
@@ -287,7 +280,9 @@ input[type=submit]:hover {
     #greencircle {max-height: 600px; max-width: 600px; margin-top: 150px;}
     .facebook {margin-top: 1.5%; margin-left: 40%;}
     main {width: 600px; max-width: 600px; margin: auto;}
-    .menu {position: fixed; margin-left: 70%; margin-top: 30%; background-color: black;}
+    .menu {position: absolute; margin-left: 70%; margin-top: 27%; background-color: black;}
+    .up_arrow {margin-left: 45%; opacity: 50%;}  
+    .copyright {margin-left: 14%;} 
     }
 
     @media only screen and (max-width: 600px) {
@@ -298,10 +293,23 @@ input[type=submit]:hover {
       #greencircle {max-height: 500px; max-width: 500px; margin-top: 250px;}
       .facebook {margin-top: 3%; margin-left: 35%;}
       main {width: 500px; max-width: 500px;}
-      .menu {position: relative; margin-left: 6.5%; margin-top: 22.5%; background-color: black;}
-      }
+      .menu {position: absolute; margin-left: 73.5%; top: 200px; background-color: black;}   
+      .up_arrow {margin-left: 35%; opacity: 50%;}  
+      .copyright {margin-left: 10%;} 
+    }
+
+    @media only screen and (max-width: 320px) {
+      #headline {font-size: 3.5em; letter-spacing: -8px;}
+      #headersubtitle {font-size: 1em; width: 170px; max-width: 170px; margin-left: 35%; margin-top: 5%;}
+      #headertext {visibility: hidden;}
+      .splatter {max-width: 150px; max-height: 150px; margin-left: -10%;}        #greencircle {max-height: 300px; max-width: 300px; margin-top: 300px;}
+      .facebook {margin-top: -18%; margin-left: 35%; position: absolute;}
+      main {width: 300px; max-width: 300px; margin: auto;}
+      .menu {position: absolute; margin-left: 60%; top: 120px; background-color: black;}
+    }
 
     article p {
       color: #666666;
     }
 
+    
