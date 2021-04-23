@@ -1,0 +1,160 @@
+.mediaViewInfo {
+	--web-view-name: work;
+	--web-view-id: work;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: work;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+#greencircle {
+	z-index: 2;
+	position: absolute;
+	top: -400px;
+	left: 16%;
+	width: 50em;
+	height: 50em;
+	border-radius: 50%;
+	animation-name: greencircle;
+	  animation-duration: 4s;
+	  background-color: #1f4425;
+  }
+
+  @keyframes greencircle {
+	from {background-color: black; top: -850px;}
+	to {background-color: #1f4425; top: -400px;}
+  }
+
+  #blackcircle {
+	z-index: 1;
+	position: absolute;
+	top: -380px;
+	left: 18%;
+	width: 50em;
+	height: 50em;
+	border-radius: 50%;
+	animation-name: blackcircle;
+	  animation-duration: 2s;
+	  background-color: #000000;
+	  opacity: 10%; 
+  }
+
+  @keyframes blackcircle {
+	from {top: -850px; opacity: 100%;}
+	to {top: -380px; opacity: 10%;}
+  }
+
+body {
+	background-color: #232323;
+	background-repeat: repeat;
+}
+#work {
+	position: relative;
+	margin: auto;
+	width: 1400px;
+	height: 2101px;
+	background-color: #232323;
+	overflow: hidden;
+	--web-view-name: work;
+	--web-view-id: work;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#Welcome_to {
+	z-index: 2;
+	opacity: 0.8;
+	left: 279.5px;
+	top: 50px;
+	position: absolute;
+	overflow: visible;
+	width: 140px;
+	white-space: nowrap;
+	line-height: 28px;
+	margin-top: -3px;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	color: rgba(87,87,87,1);
+}
+#DOBSON_STUDIO {
+	z-index: 2;
+	opacity: 0.8;
+	left: 275px;
+	top: 66px;
+	position: absolute;
+	overflow: visible;
+	width: 507px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 56px;
+	color: rgba(255,255,255,1);
+}
+#logo_dobson_newwhite_01 {
+	z-index: 2;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 130px;
+	top: 50px;
+	overflow: visible;
+}
+#WORK_l {
+	z-index: 2;
+	left: 1183px;
+	top: 50px;
+	position: absolute;
+	overflow: visible;
+	width: 88px;
+	white-space: nowrap;
+	line-height: 27px;
+	margin-top: -0.5px;
+	text-align: right;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	color: rgba(255,255,255,1);
+}
+#ABOUT {
+	z-index: 2;
+	left: 1174px;
+	top: 79px;
+	position: absolute;
+	overflow: visible;
+	width: 96px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: about.html;
+	cursor: pointer;
+	line-height: 27px;
+	margin-top: -0.5px;
+	text-align: right;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	color: rgba(87,87,87,1);
+}

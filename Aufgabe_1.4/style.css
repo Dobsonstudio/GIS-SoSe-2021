@@ -33,7 +33,7 @@ header {
   margin-left: 45%;
   margin-top: .5%;
   width: 25em;
-  max-width:20%;
+  max-width: 20%;
 }
 
 .facebook {
@@ -44,8 +44,9 @@ header {
   margin-left: 45%;
   margin-top: 1%;
   width: 2em;
-  max-width:100%;
+  max-width: 100%;
 }
+
 .facebook:hover {
   filter: invert(0%) sepia(100%) saturate(7465%) hue-rotate(318deg) brightness(111%) contrast(103%);
 }
@@ -54,14 +55,12 @@ header {
   font-size: 1em;
   position: fixed;
   z-index: 2;
-
   display: block;
   border-radius: 10%;
   top: 10px;
   margin-left: 85%;
   text-align: center;
   background: #1f4425;
-
   padding-top: 10px;
   padding-bottom: 10px;
   width: 110px;
@@ -69,39 +68,49 @@ header {
 }
 
 /*Portfolio*/
+
 .menuportfolio:link {
   color: beige;
 }
+
 .menuportfolio:visited {
   color: beige;
 }
+
 .menuportfolio:hover {
   color: black;
 }
+
 .menuportfolio:active {
-  color:black;
+  color: black;
 }
- 
+
 /*Kontakt*/
+
 .menukontakt:link {
   color: beige;
 }
+
 .menukontakt:visited {
   color: beige;
 }
+
 .menukontakt:hover {
-  color:black;
+  color: black;
 }
 
 /*Über Mich*/
+
 .menuuebermich:link {
   color: beige;
 }
+
 .menuuebermich:visited {
   color: beige;
 }
+
 .menuuebermich:hover {
-  color:black;
+  color: black;
 }
 
 .up_arrow {
@@ -116,48 +125,58 @@ header {
   bottom: 20px;
   opacity: 50%;
 }
+
 .up_arrow:hover {
   filter: invert(20%) sepia(55%) saturate(439%) hue-rotate(78deg) brightness(95%) contrast(94%);
 }
 
 body {
-    background-image: url("./media/bg.png");
-    background-repeat: repeat;
-    margin: auto;
-    font-family: sans-serif;
-} 
-  main {
-    width: 800px;
-    margin: auto;
+  background-image: url("./media/bg.png");
+  background-repeat: repeat;
+  margin: auto;
+  font-family: sans-serif;
 }
-  footer {
-    color: #666666;
-    width: 800px;
-    height: 100px;
-    margin: auto;
-    margin-top: 70px;
-  }
-  p ~ h1 {
-    color: #666666;
+
+main {
+  width: 800px;
+  margin: auto;
 }
-  h3 {
+
+footer {
+  color: #666666;
+  width: 800px;
+  height: 100px;
+  margin: auto;
+  margin-top: 70px;
+}
+
+p~h1 {
+  color: #666666;
+}
+
+h3 {
   color: #363636;
-  }
-  h1 {
-    color: black;
-    font-size: 2em;
-    font-weight: bold;
 }
+
+h1 {
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+}
+
 a {
   text-decoration: none;
 }
+
 article>h1 {
   color: #363636;
 }
+
 .flexbild {
   max-width: 200px;
   padding: 5px;
 }
+
 .flexbox {
   display: flex;
   flex-wrap: wrap;
@@ -174,8 +193,8 @@ article>h1 {
   height: 800px;
   border-radius: 50%;
   animation-name: greencircle;
-    animation-duration: 2s;
-    background-color: #1f4425;
+  animation-duration: 2s;
+  background-color: #1f4425;
 }
 
 .splatter {
@@ -205,6 +224,7 @@ article>h1 {
   margin-left: 1px;
   background-size: cover;
 }
+
 .picture04 {
   margin-left: -3000px;
   width: 100%;
@@ -263,53 +283,171 @@ input[type=submit]:hover {
 }
 
 @keyframes greencircle {
-  from {background-color: black; margin-left: -1000px;}
-  to {background-color: #1f4425; margin-left: 0px;}
+  from {
+    background-color: black;
+    margin-left: -1000px;
+  }
+  to {
+    background-color: #1f4425;
+    margin-left: 0px;
+  }
 }
 
 @keyframes splatter {
-  from {background-color: black; margin-left: -1000px;}
-  to {background-color: #1f4425; margin-left: 0px;}
+  from {
+    background-color: black;
+    margin-left: -1000px;
+  }
+  to {
+    background-color: #1f4425;
+    margin-left: 0px;
+  }
 }
 
-  @media only screen and (max-width: 1024px) {
-    #headline {font-size: 6em; letter-spacing: -11px;}
-    #headersubtitle {font-size: 1.5em; max-width: 1000px; margin-left: 40%; margin-top: .5%}
-    #headertext {font-size: 1em; max-width: 300px; margin-left: 40%; margin-top: 1%}
-    .splatter {max-width: 220px; max-height: 220px; margin-left: -5%;}
-    #greencircle {max-height: 600px; max-width: 600px; margin-top: 150px;}
-    .facebook {margin-top: 1.5%; margin-left: 40%;}
-    main {width: 600px; max-width: 600px; margin: auto;}
-    .menu {position: absolute; margin-left: 70%; margin-top: 27%; background-color: black;}
-    .up_arrow {margin-left: 45%; opacity: 50%;}  
-    .copyright {margin-left: 14%;} 
-    }
+@media only screen and (max-width: 1024px) {
+  #headline {
+    font-size: 6em;
+    letter-spacing: -11px;
+  }
+  #headersubtitle {
+    font-size: 1.5em;
+    max-width: 1000px;
+    margin-left: 40%;
+    margin-top: .5%
+  }
+  #headertext {
+    font-size: 1em;
+    max-width: 300px;
+    margin-left: 40%;
+    margin-top: 1%
+  }
+  .splatter {
+    max-width: 220px;
+    max-height: 220px;
+    margin-left: -5%;
+  }
+  #greencircle {
+    max-height: 600px;
+    max-width: 600px;
+    margin-top: 150px;
+  }
+  .facebook {
+    margin-top: 1.5%;
+    margin-left: 40%;
+  }
+  main {
+    width: 600px;
+    max-width: 600px;
+    margin: auto;
+  }
+  .menu {
+    position: absolute;
+    margin-left: 70%;
+    margin-top: 27%;
+    background-color: black;
+  }
+  .up_arrow {
+    margin-left: 45%;
+    opacity: 50%;
+  }
+  .copyright {
+    margin-left: 14%;
+  }
+}
 
-    @media only screen and (max-width: 600px) {
-      #headline {font-size: 6em; letter-spacing: -11px;}
-      #headersubtitle {font-size: 1em; max-width: 1000px; margin-left: 35%; margin-top: 1%}
-      #headertext {font-size: 1em; max-width: 300px; margin-left: 35%; margin-top: 2%}
-      .splatter {max-width: 200px; max-height: 200px; margin-left: -10%;}
-      #greencircle {max-height: 500px; max-width: 500px; margin-top: 250px;}
-      .facebook {margin-top: 3%; margin-left: 35%;}
-      main {width: 500px; max-width: 500px;}
-      .menu {position: absolute; margin-left: 73.5%; top: 200px; background-color: black;}   
-      .up_arrow {margin-left: 35%; opacity: 50%;}  
-      .copyright {margin-left: 10%;} 
-    }
+@media only screen and (max-width: 600px) {
+  #headline {
+    font-size: 6em;
+    letter-spacing: -11px;
+  }
+  #headersubtitle {
+    font-size: 1em;
+    max-width: 1000px;
+    margin-left: 35%;
+    margin-top: 1%
+  }
+  #headertext {
+    font-size: 1em;
+    max-width: 300px;
+    margin-left: 35%;
+    margin-top: 2%
+  }
+  .splatter {
+    max-width: 200px;
+    max-height: 200px;
+    margin-left: -10%;
+  }
+  #greencircle {
+    max-height: 500px;
+    max-width: 500px;
+    margin-top: 250px;
+  }
+  .facebook {
+    margin-top: 3%;
+    margin-left: 35%;
+  }
+  main {
+    width: 500px;
+    max-width: 500px;
+  }
+  .menu {
+    position: absolute;
+    margin-left: 73.5%;
+    top: 200px;
+    background-color: black;
+  }
+  .up_arrow {
+    margin-left: 35%;
+    opacity: 50%;
+  }
+  .copyright {
+    margin-left: 10%;
+  }
+}
 
-    @media only screen and (max-width: 320px) {
-      #headline {font-size: 3.5em; letter-spacing: -8px;}
-      #headersubtitle {font-size: 1em; width: 170px; max-width: 170px; margin-left: 35%; margin-top: 5%;}
-      #headertext {visibility: hidden;}
-      .splatter {max-width: 150px; max-height: 150px; margin-left: -10%;}        #greencircle {max-height: 300px; max-width: 300px; margin-top: 300px;}
-      .facebook {margin-top: -18%; margin-left: 35%; position: absolute;}
-      main {width: 300px; max-width: 300px; margin: auto;}
-      .menu {position: absolute; margin-left: 60%; top: 120px; background-color: black;}
-    }
+@media only screen and (max-width: 320px) {
+  #headline {
+    font-size: 3.5em;
+    letter-spacing: -8px;
+  }
+  #headersubtitle {
+    font-size: 1em;
+    width: 170px;
+    max-width: 170px;
+    margin-left: 35%;
+    margin-top: 5%;
+  }
+  #headertext {
+    visibility: hidden;
+  }
+  .splatter {
+    max-width: 150px;
+    max-height: 150px;
+    margin-left: -10%;
+  }
+  #greencircle {
+    max-height: 300px;
+    max-width: 300px;
+    margin-top: 300px;
+  }
+  .facebook {
+    margin-top: -18%;
+    margin-left: 35%;
+    position: absolute;
+  }
+  main {
+    width: 300px;
+    max-width: 300px;
+    margin: auto;
+  }
+  .menu {
+    position: absolute;
+    margin-left: 60%;
+    top: 120px;
+    background-color: black;
+  }
+}
 
-    article p {
-      color: #666666;
-    }
-
-    
+article p {
+  color: #666666;
+}
