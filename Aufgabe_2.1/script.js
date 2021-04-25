@@ -219,24 +219,24 @@ function factorial() {
 factorial();
 // AUFGABE 5F
 console.log(" ");
-function check() {
-    let year = 2000;
-    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
-        console.log(year + " ist ein Schaltjahr");
-    }
-    else {
-        console.log(year + " ist kein Schaltjahr");
+function leapyear() {
+    for (let year = 1900; year < 2021; year++) {
+        if (year % 4 === 0 && year % 100 !== 0) {
+            console.log("leapyear: " + year);
+        }
+        if (year % 400 === 0) {
+            console.log("leapyear: " + year);
+        }
     }
 }
-check();
+leapyear();
 // AUFGABE 6A
-console.log(" ");
-let zeichen = "#";
-let size = 5;
-for (i = 1; i <= size; i++) {
-    zeichen = zeichen + i;
-    console.log(zeichen);
+function pyramid() {
+    for (let i = 0; i < 8; i++) {
+        console.log("#".repeat(i));
+    }
 }
+pyramid();
 // AUFGABE 6B
 console.log(" ");
 for (i = 1; i <= 100; i++) {

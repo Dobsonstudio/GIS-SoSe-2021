@@ -269,27 +269,28 @@ factorial();
 
 console.log(" ");
 
-function check(): void {
-    let year: number = 2000;
-    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
-        console.log(year + " ist ein Schaltjahr");
-    } else {
-        console.log(year + " ist kein Schaltjahr");
+function leapyear(): void {
+    for (let year: number = 1900; year < 2021; year++) {
+        if (year % 4 === 0 && year % 100 !== 0) {
+            console.log("leapyear: " + year);
+        }
+        if (year % 400 === 0) {
+            console.log("leapyear: " + year);
+        }
     }
 }
 
-check();
+leapyear();
 
 // AUFGABE 6A
 
-console.log(" ");
-
-let zeichen: string = "#";
-let size: number = 5;
-for (i = 1; i <= size; i++) {
-    zeichen = zeichen + i;
-    console.log(zeichen);
+function pyramid(): void {
+    for (let i: number = 0; i < 8; i++) {
+        console.log("#".repeat(i));
+    }
 }
+
+pyramid();
 
 // AUFGABE 6B
 
