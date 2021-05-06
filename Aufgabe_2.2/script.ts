@@ -1,40 +1,35 @@
 // AUFGABE 1A
 
-let nummer1: number = 8;
-let nummer2: number = 3;
-let nummer3: number = 4;
-let nummer4: number = 9;
-let nummer5: number = 1;
-
-function min(): void {
-    //let minimum: number[] = [2, 9, 3, 4, 5];
-    console.log("Die kleinste Nummer ist: " + Math.min(nummer1, nummer2, nummer3, nummer4, nummer5));
-    //console.log(Math.min(...minimum));
+function min(...numbers: number[]): number {
+    let x: number = numbers[0];
+    for (let index: number = 0; index < numbers.length; index++) {
+        if (numbers[index] < x) {
+            x = numbers[index];
+        }
+    } 
+    return x;
 }
 
-min();
+console.log(min(4, 3, 2));
 
 // AUFGABE 1B
 
 console.log(" ");
 
-function isEven(): void {
-    let x: number = -1;
-    let even: number = 0;
-    let uneven: number = 1;
-
-    if (x % 2 == 0) {
-        x = even;
-        console.log("true / even");
+function isEven(_n: number): boolean {
+    if (_n == 0) {
+        return true;
+    } else if (_n == 1) { 
+        return false;
+    } else if (_n > 0) {
+        return isEven(_n - 2);
     } else {
-        x = uneven;
-        console.log("false / uneven");
+        return isEven(_n + 2);
     }
 }
 
-isEven();
-
-// -1 gibt uneven aus, also ist das richtig.
+console.log(isEven(50));
+console.log(isEven(-1));
 
 // AUFGABE 1C
 
@@ -71,6 +66,7 @@ for (let student of studentArray) {
 
 console.log(" ");
 
+/*
 function backwards(): void {
     let numbers: Array<number> = [1, 3, 7, 3, 2];
     console.log("Array: " + numbers);
@@ -79,40 +75,41 @@ function backwards(): void {
 }
 
 backwards();
+*/
+
+function backwards(_arrei: number[]): number[] {
+    let x: number[] = [];
+    for (let index: number = 0; index < _arrei.length; index++) {
+        x[index] = _arrei[_arrei.length - index - 1];
+    }
+    return x;
+}
+
+console.log(backwards([1, 2, 5, 7, 7, 2]));
 
 // AUFGABE 2B
 
 console.log(" ");
 
-function join(): void {
-    let numbers1: Array<number> = [1, 2, 5];
-    let numbers2: Array<number> = [...numbers1, 2, 3, 6];
-    console.log(numbers2);
+function join(_arone: number[], _artwo: number[]): number[] {
+    return [..._arone, ..._artwo];
 }
 
-join();
+console.log(join([1, 2, 3, 4, 5, 6], [3, 2, 1 , 3, 4]));
 
 // AUFGABE 2C
 
 console.log(" ");
 
-function split(): void {
-    let numbers3: Array<number> = [2, 1, 3, 7, 8, 9];
-    console.log(numbers3.slice(1, numbers3.length - 1));
+function split(_arrone: number[], _indone: number, _indtwo: number): number[] {
+    let x: number[] = [];
+    for (let index: number = _indone; index <= _indtwo; index++) {
+        x[index - _indone] = _arrone[index];
+    }
+    return x;
 }
 
-split();
-
-function splitright(): void {
-    let numbers4: Array<number> = [2, 1, 3, 7, 8, 9];
-    let index1: number = 2;
-    let index2: number = 9;
-    let stelle1: number = numbers4.findIndex(element => element == index1);
-    let stelle2: number = numbers4.findIndex(element => element == index2);
-    console.log(numbers4.slice(stelle1, stelle2));
-}
-
-splitright();
+console.log(split([1, 3, 4, 5, 6], 1, 3));
 
 // AUFGABE 3A
 
@@ -124,18 +121,22 @@ let context: CanvasRenderingContext2D = canvas.getContext("2d");
 context.lineWidth = 3;
 
 function himmel(): void {
+    context.beginPath();
     context.fillStyle = "lightblue";
     context.fillRect(0, 0, 500, 200);
+    context.closePath();
 }
 
 function grasboden(): void {
+    context.beginPath();
     context.fillStyle = "green";
     context.fillRect(0, 200, 500, 200);
+    context.closePath();
 }
 
 function berge(): void {
-    context.fillStyle = "grey";
     context.beginPath();
+    context.fillStyle = "grey";
     context.moveTo(100, 250);
     context.lineTo(180, 100);
     context.lineTo(200, 170);
@@ -146,14 +147,16 @@ function berge(): void {
 }
 
 function sonne(): void {
+    context.beginPath();
     context.fillStyle = "yellow";
     context.arc(70, 70, 50, 0, 2 * Math.PI);
+    context.closePath();
     context.fill();
 }
 
 function wolken(): void {
-    context.fillStyle = "white";
     context.beginPath();
+    context.fillStyle = "white";
     context.moveTo(170, 80);
     context.bezierCurveTo(420, 150, 420, 120, 390, 100);
     context.bezierCurveTo(420, 40, 370, 30, 340, 50);

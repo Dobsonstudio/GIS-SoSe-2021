@@ -1,33 +1,33 @@
 "use strict";
 // AUFGABE 1A
-let nummer1 = 8;
-let nummer2 = 3;
-let nummer3 = 4;
-let nummer4 = 9;
-let nummer5 = 1;
-function min() {
-    //let minimum: number[] = [2, 9, 3, 4, 5];
-    console.log("Die kleinste Nummer ist: " + Math.min(nummer1, nummer2, nummer3, nummer4, nummer5));
-    //console.log(Math.min(...minimum));
+function min(...numbers) {
+    let x = numbers[0];
+    for (let index = 0; index < numbers.length; index++) {
+        if (numbers[index] < x) {
+            x = numbers[index];
+        }
+    }
+    return x;
 }
-min();
+console.log(min(4, 3, 2));
 // AUFGABE 1B
 console.log(" ");
-function isEven() {
-    let x = -1;
-    let even = 0;
-    let uneven = 1;
-    if (x % 2 == 0) {
-        x = even;
-        console.log("true / even");
+function isEven(_n) {
+    if (_n == 0) {
+        return true;
+    }
+    else if (_n == 1) {
+        return false;
+    }
+    else if (_n > 0) {
+        return isEven(_n - 2);
     }
     else {
-        x = uneven;
-        console.log("false / uneven");
+        return isEven(_n + 2);
     }
 }
-isEven();
-// -1 gibt uneven aus, also ist das richtig.
+console.log(isEven(50));
+console.log(isEven(-1));
 // AUFGABE 1C
 console.log(" ");
 function genericstudent(studentvalues) {
@@ -48,53 +48,60 @@ for (let student of studentArray) {
 }
 // AUFGABE 2A
 console.log(" ");
-function backwards() {
-    let numbers = [1, 3, 7, 3, 2];
+/*
+function backwards(): void {
+    let numbers: Array<number> = [1, 3, 7, 3, 2];
     console.log("Array: " + numbers);
-    let reversed = numbers.reverse();
+    let reversed: Array<number> = numbers.reverse();
     console.log("Reversed: " + reversed);
 }
+
 backwards();
+*/
+function backwards(_arrei) {
+    let x = [];
+    for (let index = 0; index < _arrei.length; index++) {
+        x[index] = _arrei[_arrei.length - index - 1];
+    }
+    return x;
+}
+console.log(backwards([1, 2, 5, 7, 7, 2]));
 // AUFGABE 2B
 console.log(" ");
-function join() {
-    let numbers1 = [1, 2, 5];
-    let numbers2 = [...numbers1, 2, 3, 6];
-    console.log(numbers2);
+function join(_arone, _artwo) {
+    return [..._arone, ..._artwo];
 }
-join();
+console.log(join([1, 2, 3, 4, 5, 6], [3, 2, 1, 3, 4]));
 // AUFGABE 2C
 console.log(" ");
-function split() {
-    let numbers3 = [2, 1, 3, 7, 8, 9];
-    console.log(numbers3.slice(1, numbers3.length - 1));
+function split(_arrone, _indone, _indtwo) {
+    let x = [];
+    for (let index = _indone; index <= _indtwo; index++) {
+        x[index - _indone] = _arrone[index];
+    }
+    return x;
 }
-split();
-function splitright() {
-    let numbers4 = [2, 1, 3, 7, 8, 9];
-    let index1 = 2;
-    let index2 = 9;
-    let stelle1 = numbers4.findIndex(element => element == index1);
-    let stelle2 = numbers4.findIndex(element => element == index2);
-    console.log(numbers4.slice(stelle1, stelle2));
-}
-splitright();
+console.log(split([1, 3, 4, 5, 6], 1, 3));
 // AUFGABE 3A
 console.log(" ");
 let canvas = document.getElementById("myFirstCanvas");
 let context = canvas.getContext("2d");
 context.lineWidth = 3;
 function himmel() {
+    context.beginPath();
     context.fillStyle = "lightblue";
     context.fillRect(0, 0, 500, 200);
+    context.closePath();
 }
 function grasboden() {
+    context.beginPath();
     context.fillStyle = "green";
     context.fillRect(0, 200, 500, 200);
+    context.closePath();
 }
 function berge() {
-    context.fillStyle = "grey";
     context.beginPath();
+    context.fillStyle = "grey";
     context.moveTo(100, 250);
     context.lineTo(180, 100);
     context.lineTo(200, 170);
@@ -104,13 +111,15 @@ function berge() {
     context.fill();
 }
 function sonne() {
+    context.beginPath();
     context.fillStyle = "yellow";
     context.arc(70, 70, 50, 0, 2 * Math.PI);
+    context.closePath();
     context.fill();
 }
 function wolken() {
-    context.fillStyle = "white";
     context.beginPath();
+    context.fillStyle = "white";
     context.moveTo(170, 80);
     context.bezierCurveTo(420, 150, 420, 120, 390, 100);
     context.bezierCurveTo(420, 40, 370, 30, 340, 50);
