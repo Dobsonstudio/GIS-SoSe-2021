@@ -1,0 +1,17 @@
+#headdiv {
+  position: relative;
+  top: 10px;
+  margin: auto;
+  background-color: grey;
+  padding: 10px;
+}
+
+.headEmpty {
+  border: 5px solid black;
+  padding: 5px;
+}
+
+.headSelection {
+  border: 5px solid red;
+  padding: 5px;
+}
