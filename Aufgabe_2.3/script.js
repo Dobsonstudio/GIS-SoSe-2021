@@ -33,7 +33,7 @@ function newRectangle() {
     document.body.appendChild(create);
 }
 function reset() {
-    for (let i = 10; divsave.length; i++) {
+    for (let i = 10; i < divsave.length; i++) {
         divsave[i].remove();
     }
 }
@@ -43,5 +43,4 @@ button2.appendChild(document.createTextNode("Reset"));
 button2.addEventListener("click", function () { reset(); });
 button2.style.zIndex = "1";
 button2.style.position = "relative";
-// AUFGABE 2 A
 //# sourceMappingURL=script.js.map

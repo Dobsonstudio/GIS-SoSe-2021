@@ -33,6 +33,8 @@ function headSelect(_headSelect: HTMLImageElement): void {
     _headSelect.setAttribute("class", "headSelection");
     head(_headSelect.src);
     console.log(_headSelect.src);
+    localStorage.setItem("selecthead", _headSelect.src);
+    //localStorage.getItem("selecthead");
 }
 }
 

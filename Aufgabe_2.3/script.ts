@@ -37,7 +37,7 @@ function newRectangle(): void {
 }
 
 function reset(): void {
-    for (let i: number = 10; divsave.length; i++) {
+    for (let i: number = 10; i < divsave.length; i++) {
         divsave[i].remove();
     }
 }
@@ -49,7 +49,6 @@ button2.addEventListener("click", function(): void {reset(); });
 button2.style.zIndex = "1";
 button2.style.position = "relative";
 
-// AUFGABE 2 A
 
 
 
