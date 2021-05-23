@@ -4,10 +4,8 @@ namespace space24 {
         head: string[];
         eyes: string[];
         mouth: string[];
-        torso: string[];
-        legs: string[];
     }
-
+    
     let headdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("headdiv");
     let eyesdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("eyesdiv");
     let mouthdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("mouthdiv");
@@ -16,31 +14,31 @@ namespace space24 {
     let alloptions: NodeListOf<HTMLImageElement>;
 
     function showalloptionswithdata(_parts: Human): void {
-        if (document.getElementById("start") == null) {
-    
-            if (document.getElementById("bodyHead") != null) {
-                showalloptions(_parts.head, headdiv);
-            }
-    
-            if (document.getElementById("bodyEyes") != null) {
-                showalloptions(_parts.eyes, eyesdiv);
-                picks();
-            }
-    
-            if (document.getElementById("bodyMouth") != null) {
-                showalloptions(_parts.mouth, mouthdiv);
-                picks();
-            }
-    
-            if (document.getElementById("bodyResult") != null) {
-                showResult();
-            }
-            alloptions = document.querySelectorAll(".bodyEmpty");
-    
-        } else {
-            localStorage.clear();
+    if (document.getElementById("start") == null) {
+
+        if (document.getElementById("bodyHead") != null) {
+            showalloptions(_parts.head, headdiv);
         }
+
+        if (document.getElementById("bodyEyes") != null) {
+            showalloptions(_parts.eyes, eyesdiv);
+            picks();
         }
+
+        if (document.getElementById("bodyMouth") != null) {
+            showalloptions(_parts.mouth, mouthdiv);
+            picks();
+        }
+
+        if (document.getElementById("bodyResult") != null) {
+            showResult();
+        }
+        alloptions = document.querySelectorAll(".bodyEmpty");
+
+    } else {
+        localStorage.clear();
+    }
+    }
 
     function showResult(): void {
         document.getElementById("resulthead").setAttribute("src", localStorage.getItem("selecthead"));
@@ -100,8 +98,7 @@ namespace space24 {
         }
     
     }
-
- //b)
+    //b)
     async function getData(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
         console.log("Response: ", response);
