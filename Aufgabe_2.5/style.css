@@ -1,0 +1,122 @@
+header {
+  height: 150px;
+}
+#headline {
+  font-size: 4em;
+  z-index: 2;
+  color: white;
+  letter-spacing: -5px;
+  position: relative;
+  margin: auto;
+  top: 10px;
+  text-align: center;
+}
+
+#headersubtitle {
+  font-size: 1.5em;
+  z-index: 2;
+  color: white;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+body, #start {
+  background-color:cadetblue;
+  margin: auto;
+  font-family: sans-serif;
+  text-align: center;
+} 
+
+main {
+  width: 800px;
+  margin: auto;
+}
+
+footer {
+  width: 800px;
+  height: 100px;
+  margin: auto;
+  margin-top: 70px;
+}
+
+p {
+  color: white;
+}
+h3 {
+color: white;
+}
+h1 {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#headdiv, #eyesdiv, #mouthdiv {
+  position: relative;
+  top: 10px;
+  margin: auto;
+  padding: 10px;
+}
+
+.bodyEmpty {
+  width: 100px;
+  height: auto;
+  padding: 5px;
+}
+
+.bodySelection {
+  border: 5px solid red;
+  width: 100px;
+  height: auto;
+}
+
+#startbutton, #headtoeyes, #eyestomouth, #mouthtoresult {
+  z-index: 1;
+  color: black;
+  font-size: 1.5em;
+  position: relative;
+}
+
+.headtoeyes {
+  top: 1000px;
+  position: absolute;
+}
+
+#button {
+  z-index: 1;
+  position: absolute;
+  top: 225px;
+  margin-left: 15%;
+}
+
+#currentselection {
+  position: relative;
+  top: 10px;
+}
+
+#resulthead {
+  z-index: 1;
+  position: absolute;
+  top: 300px;
+  margin-left: -25px;
+}
+
+#resulteyes {
+  z-index: 3;
+  position: absolute;
+  top: 330px;
+  margin-left: -5px;
+}
+
+#resultmouth {
+  z-index: 2;
+  position: absolute;
+  top: 340px;
+  margin-left: 5px;
+}
