@@ -7,8 +7,6 @@ namespace space24 {
         torso: string[];
         legs: string[];
     }
-    
-    let human: Human = JSON.parse(humanJSON);
 
     let headdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("headdiv");
     let eyesdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("eyesdiv");
@@ -17,31 +15,32 @@ namespace space24 {
 
     let alloptions: NodeListOf<HTMLImageElement>;
 
-    if (document.getElementById("start") == null) {
-
-        if (document.getElementById("bodyHead") != null) {
-            showalloptions(human.head, headdiv);
+    function showalloptionswithdata(_parts: Human): void {
+        if (document.getElementById("start") == null) {
+    
+            if (document.getElementById("bodyHead") != null) {
+                showalloptions(_parts.head, headdiv);
+            }
+    
+            if (document.getElementById("bodyEyes") != null) {
+                showalloptions(_parts.eyes, eyesdiv);
+                picks();
+            }
+    
+            if (document.getElementById("bodyMouth") != null) {
+                showalloptions(_parts.mouth, mouthdiv);
+                picks();
+            }
+    
+            if (document.getElementById("bodyResult") != null) {
+                showResult();
+            }
+            alloptions = document.querySelectorAll(".bodyEmpty");
+    
+        } else {
+            localStorage.clear();
         }
-
-        if (document.getElementById("bodyEyes") != null) {
-            showalloptions(human.eyes, eyesdiv);
-            picks();
         }
-
-        if (document.getElementById("bodyMouth") != null) {
-            showalloptions(human.mouth, mouthdiv);
-            picks();
-        }
-
-        if (document.getElementById("bodyResult") != null) {
-            showResult();
-        }
-        alloptions = document.querySelectorAll(".bodyEmpty");
-
-    } else {
-        localStorage.clear();
-    }
-
 
     function showResult(): void {
         document.getElementById("resulthead").setAttribute("src", localStorage.getItem("selecthead"));
@@ -102,8 +101,33 @@ namespace space24 {
     
     }
 
-}
-function humanJSON(humanJSON: any): space24.Human {
-    throw new Error("Function not implemented.");
-}
+ //b)
+    async function getData(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        console.log("Response: ", response);
+        let data: Human = await response.json();
+        showalloptionswithdata(data);
+    }
+    getData("https://dobsonstudio.github.io/GIS-SoSe-2021/Aufgabe_2.5/data.json");
 
+    //c)
+    export interface Answer {
+        [key: string]: string;
+    }
+    async function sendData(_url: RequestInfo): Promise <void> {
+        let query: URLSearchParams = new URLSearchParams(localStorage);
+        _url = _url + "?" + query.toString();
+        let answer: Response = await fetch(_url);
+        let output: Answer = await answer.json();
+        let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("errormessage");
+        if (output.error) {
+            displayResponse.innerText = output.error;
+            displayResponse.style.color = "red";   
+        }
+        if (output.message) {
+            displayResponse.innerText = output.Message;
+            displayResponse.style.color = "green"; 
+        }
+    }
+    sendData("https://gis-communication.herokuapp.com");
+}

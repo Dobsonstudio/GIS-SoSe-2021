@@ -1,31 +1,32 @@
 "use strict";
 var space24;
 (function (space24) {
-    let human = JSON.parse(humanJSON);
     let headdiv = document.getElementById("headdiv");
     let eyesdiv = document.getElementById("eyesdiv");
     let mouthdiv = document.getElementById("mouthdiv");
     let recentpicks = document.getElementById("recentpicks");
     let alloptions;
-    if (document.getElementById("start") == null) {
-        if (document.getElementById("bodyHead") != null) {
-            showalloptions(human.head, headdiv);
+    function showalloptionswithdata(_parts) {
+        if (document.getElementById("start") == null) {
+            if (document.getElementById("bodyHead") != null) {
+                showalloptions(_parts.head, headdiv);
+            }
+            if (document.getElementById("bodyEyes") != null) {
+                showalloptions(_parts.eyes, eyesdiv);
+                picks();
+            }
+            if (document.getElementById("bodyMouth") != null) {
+                showalloptions(_parts.mouth, mouthdiv);
+                picks();
+            }
+            if (document.getElementById("bodyResult") != null) {
+                showResult();
+            }
+            alloptions = document.querySelectorAll(".bodyEmpty");
         }
-        if (document.getElementById("bodyEyes") != null) {
-            showalloptions(human.eyes, eyesdiv);
-            picks();
+        else {
+            localStorage.clear();
         }
-        if (document.getElementById("bodyMouth") != null) {
-            showalloptions(human.mouth, mouthdiv);
-            picks();
-        }
-        if (document.getElementById("bodyResult") != null) {
-            showResult();
-        }
-        alloptions = document.querySelectorAll(".bodyEmpty");
-    }
-    else {
-        localStorage.clear();
     }
     function showResult() {
         document.getElementById("resulthead").setAttribute("src", localStorage.getItem("selecthead"));
@@ -78,8 +79,29 @@ var space24;
             recentpicks.appendChild(temp);
         }
     }
+    //b)
+    async function getData(_url) {
+        let response = await fetch(_url);
+        console.log("Response: ", response);
+        let data = await response.json();
+        showalloptionswithdata(data);
+    }
+    getData("https://dobsonstudio.github.io/GIS-SoSe-2021/Aufgabe_2.5/data.json");
+    async function sendData(_url) {
+        let query = new URLSearchParams(localStorage);
+        _url = _url + "?" + query.toString();
+        let answer = await fetch(_url);
+        let output = await answer.json();
+        let displayResponse = document.getElementById("errormessage");
+        if (output.error) {
+            displayResponse.innerText = output.error;
+            displayResponse.style.color = "red";
+        }
+        if (output.message) {
+            displayResponse.innerText = output.Message;
+            displayResponse.style.color = "green";
+        }
+    }
+    sendData("https://gis-communication.herokuapp.com");
 })(space24 || (space24 = {}));
-function humanJSON(humanJSON) {
-    throw new Error("Function not implemented.");
-}
 //# sourceMappingURL=script.js.map
