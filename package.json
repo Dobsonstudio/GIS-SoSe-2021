@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@types/node": "^15.6.1"
+  },
+  "name": "gis-sose-2021",
+  "description": "It's not like I want you to read me or anything ...baka.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe_3.1/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dobsonstudio/GIS-SoSe-2021.git"
+  },
+  "author": "Dobsonstudio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dobsonstudio/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/Dobsonstudio/GIS-SoSe-2021#readme"
+}
