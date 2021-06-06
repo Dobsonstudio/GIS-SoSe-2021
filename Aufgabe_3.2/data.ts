@@ -3,14 +3,14 @@ namespace P_3_2Server {
 
     document.getElementById("submitHTML").addEventListener("click", function(): void {
         path = "/html";
-        submit();
+        handleSubmit();
     });
     document.getElementById("submitJSON").addEventListener("click", function(): void {
         path = "/json";
-        submit();
+        handleSubmit();
     });
     
-    async function submit(): Promise<void> {
+    async function handleSubmit(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
