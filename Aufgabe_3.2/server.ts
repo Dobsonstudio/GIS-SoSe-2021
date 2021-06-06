@@ -28,10 +28,10 @@ export namespace P_3_2Server {
         _response.setHeader("Access-Control-Allow-Origin", "*");
         //Header eigenschaften werden gesetzt
 
-        let q: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
-        let qdata: FormElements = {fname: q.searchParams.get("fname"), lname: q.searchParams.get("lname")};
-        if (q.pathname == "/html") _response.write(htmlResponse(qdata));
-        if (q.pathname == "/json") _response.write(JSON.stringify(qdata));
+        let quest: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
+        let questdata: FormElements = {fname: quest.searchParams.get("fname"), lname: quest.searchParams.get("lname")};
+        if (quest.pathname == "/html") _response.write(htmlResponse(questdata));
+        if (quest.pathname == "/json") _response.write(JSON.stringify(questdata));
         _response.end();
     }
 }

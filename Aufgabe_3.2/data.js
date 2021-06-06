@@ -2,20 +2,20 @@
 var P_3_2Server;
 (function (P_3_2Server) {
     let path;
-    document.getElementById("submitJSON").addEventListener("click", function () {
-        path = "/json";
-        submit();
-    });
     document.getElementById("submitHTML").addEventListener("click", function () {
         path = "/html";
-        submit();
+        handleSubmit();
     });
-    async function submit() {
+    document.getElementById("submitJSON").addEventListener("click", function () {
+        path = "/json";
+        handleSubmit();
+    });
+    async function handleSubmit() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://dobsonstudio2021.herokuapp.com";
+        let url = "https://dobsonstudio2021.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
-        let response = await fetch(url, { method: "GET" });
+        let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
         showResponse(responseText);
         if (path == "/json")
