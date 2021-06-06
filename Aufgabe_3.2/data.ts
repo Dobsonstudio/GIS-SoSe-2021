@@ -1,11 +1,12 @@
 namespace P_3_2Server {
     let path: string;
-    document.getElementById("submitJSON").addEventListener("click", function(): void {
-        path = "/json";
-        submit();
-    });
+
     document.getElementById("submitHTML").addEventListener("click", function(): void {
         path = "/html";
+        submit();
+    });
+    document.getElementById("submitJSON").addEventListener("click", function(): void {
+        path = "/json";
         submit();
     });
     
