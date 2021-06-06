@@ -31,7 +31,7 @@ export namespace P_3_2Server {
         let q: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
         let qdata: FormElements = {fname: q.searchParams.get("fname"), lname: q.searchParams.get("lname")};
         if (q.pathname == "/html") _response.write(htmlResponse(qdata));
-        if (q.pathname == "/json") _response.wirte(JSON.stringify(qdata));
+        if (q.pathname == "/json") _response.write(JSON.stringify(qdata));
         _response.end();
     }
 }
