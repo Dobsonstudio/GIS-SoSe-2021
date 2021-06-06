@@ -12,7 +12,7 @@ namespace P_3_2Server {
     
     async function submit(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
+        let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();  
         let response: Response = await fetch(url, { method: "GET"});
