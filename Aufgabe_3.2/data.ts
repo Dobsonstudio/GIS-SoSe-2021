@@ -15,7 +15,7 @@ namespace P_3_2Server {
         let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();  
-        let response: Response = await fetch(url, { method: "GET"});
+        let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
         showResponse(responseText);
         if (path == "/json") console.log(JSON.parse(responseText));

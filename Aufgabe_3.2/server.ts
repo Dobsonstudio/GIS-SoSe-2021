@@ -23,15 +23,15 @@ export namespace P_3_2Server {
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("I hear voices!");
-        //Konsole gibt Signal zurück bei einer Request
+        //Konsole gibt Signal zurück bei einer Req
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         //Header eigenschaften werden gesetzt
 
-        let quest: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
-        let questdata: FormElements = {fname: quest.searchParams.get("fname"), lname: quest.searchParams.get("lname")};
-        if (quest.pathname == "/html") _response.write(htmlResponse(questdata));
-        if (quest.pathname == "/json") _response.wirte(JSON.stringify(questdata));
+        let q: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
+        let qdata: FormElements = {fname: q.searchParams.get("fname"), lname: q.searchParams.get("lname")};
+        if (q.pathname == "/html") _response.write(htmlResponse(qdata));
+        if (q.pathname == "/json") _response.wirte(JSON.stringify(qdata));
         _response.end();
     }
 }
