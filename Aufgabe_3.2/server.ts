@@ -31,9 +31,15 @@ export namespace P_3_2Server {
 
         let quest: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
         let questdata: FormElements = {fname: quest.searchParams.get("fname"), lname: quest.searchParams.get("lname")};
-        if (quest.pathname == "/html") _response.write(htmlResponse(questdata));
-        if (quest.pathname == "/json") _response.write(JSON.stringify(questdata));
-        _response.end();
+        if (quest.pathname == "/html") {
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.write(htmlResponse(questdata));
+        }
+        if (quest.pathname == "/json") {
+        _response.setHeader("content-type", "application/json");
+        _response.write(JSON.stringify(questdata));
+        }
+        _response.end();    
     }
 }
 

@@ -4,21 +4,25 @@ var P_3_2Server;
     let path;
     document.getElementById("submitHTML").addEventListener("click", function () {
         path = "/html";
-        handleSubmit();
+        handleSubmit("/html");
     });
     document.getElementById("submitJSON").addEventListener("click", function () {
         path = "/json";
-        handleSubmit();
+        handleSubmit("/json");
     });
-    async function handleSubmit() {
+    async function handleSubmit(_urlanhang) {
         let formData = new FormData(document.forms[0]);
-        let url = "https://dobsonstudio2021.herokuapp.com/";
+        let url = "https://dobsonstudio2021.herokuapp.com";
+        if (_urlanhang == "/json")
+            url += "/json";
+        if (_urlanhang == "/html")
+            url += "/html";
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
         showResponse(responseText);
-        if (path == "/json")
+        if (_urlanhang == "/json")
             console.log(JSON.parse(responseText));
         else
             console.log(responseText);

@@ -29,10 +29,14 @@ var P_3_2Server;
         //Header eigenschaften werden gesetzt
         let quest = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
         let questdata = { fname: quest.searchParams.get("fname"), lname: quest.searchParams.get("lname") };
-        if (quest.pathname == "/html")
+        if (quest.pathname == "/html") {
+            _response.setHeader("content-type", "text/html; charset=utf-8");
             _response.write(htmlResponse(questdata));
-        if (quest.pathname == "/json")
+        }
+        if (quest.pathname == "/json") {
+            _response.setHeader("content-type", "application/json");
             _response.write(JSON.stringify(questdata));
+        }
         _response.end();
     }
 })(P_3_2Server = exports.P_3_2Server || (exports.P_3_2Server = {}));
