@@ -1,5 +1,8 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.6.18",
+    "mongodb": "^3.6.9"
+  },
   "name": "gis-sose-2021",
   "description": "It's not like I want you to read me or anything ...baka.",
   "version": "1.0.0",
@@ -8,7 +11,7 @@
     "@types/node": "^15.12.1"
   },
   "scripts": {
-    "start": "node Aufgabe_3.2/server.js"
+    "start": "node Aufgabe_3.4/server.js"
   },
   "repository": {
     "type": "git",

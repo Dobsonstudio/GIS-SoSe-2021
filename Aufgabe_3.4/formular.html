@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./data.js" async></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <h3>Login</h3>
+
+    <div id="formular">
+        <form>
+            <label for="fname">Vorname:</label><br>
+            <input type="text" name="fname" id="fnameID"><br>
+            
+            <label for="lname">Nachname:</label><br>
+            <input type="text" name="lname" id="lnameID"><br>
+
+            <label for="email">E-Mail:</label><br>
+            <input type="email" name="email" id="emailID"><br>
+
+            <button type="button" id="addDB">Zur Datenbank hinzufügen</button>
+            <button type="button" id="callDB">Von Datenbank abrufen</button>
+        </form>
+        <div id="response"></div>
+    </div>
+
+</body>
+
+</html>
