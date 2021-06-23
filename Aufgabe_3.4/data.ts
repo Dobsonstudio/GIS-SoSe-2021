@@ -1,7 +1,7 @@
 namespace P_3_4Server {
     
     let path: string;
-    let response: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
+    let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     document.getElementById("addToDB").addEventListener("click", function(): void {
         path = "/addDB";
         handleSubmit();
@@ -20,7 +20,7 @@ namespace P_3_4Server {
         let responseText: string = await response.text();
 
         if (path == "/retrieve") {
-            response.innerHTML = "";
+            showresponse.innerHTML = "";
             console.log("Retrieved JSON", JSON.parse(responseText));
             let responseJSON: CollectionData[] = JSON.parse(responseText);
 
@@ -32,7 +32,7 @@ namespace P_3_4Server {
                                  "<br> Nachname: " + responseJSON[i].lname +
                                  "<br> E-Mail: " + responseJSON[i].email + "<br>";
 
-                let tempDelete: HTMLButtonElement = <HTMLButtonElement> document.createElement("button");
+                /*let tempDelete: HTMLButtonElement = <HTMLButtonElement> document.createElement("button");
                 tempDelete.className = "deleteBtn";
                 tempDelete.addEventListener("click", async function(): Promise<void> {
                     await fetch("https://dobsonstudio2021.herokuapp.com/delete?_id=" + responseJSON[i]._id, {method: "get"});
@@ -41,7 +41,7 @@ namespace P_3_4Server {
 
                 tempDelete.appendChild(document.createTextNode("Delete"));
                 temp.appendChild(tempDelete);
-                response.appendChild(temp);
+                response.appendChild(temp);*/
             }
         } else if (path == "/addDB") {
             console.log(responseText);
@@ -51,7 +51,7 @@ namespace P_3_4Server {
         }    
     }
     function showResponse(text: string): void {
-        response.innerHTML = text;
+        showresponse.innerHTML = text;
     }
     interface FormElements {
         fname: string;

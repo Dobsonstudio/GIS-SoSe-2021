@@ -11,14 +11,14 @@ export namespace P_3_4Server {
         port = 8100;
     //Setzt Port auf 8100
     startServer(port);
-    connectToMongoDatabase;
+    connectToMongoDatabase(mongoDatabase);
 
     async function connectToMongoDatabase(url: string): Promise<void> {
         console.log("Starting connection");
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-        mongoCollection = mongoClient.db("Test").collection("UserData");
+        mongoCollection = mongoClient.db("Test1").collection("Test1");
         console.log("Database connection", mongoCollection != undefined);
     }
 
