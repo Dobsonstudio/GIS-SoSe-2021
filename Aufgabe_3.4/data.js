@@ -25,7 +25,7 @@ var P_3_4Server;
         url += "?" + query.toString();
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
-        showresponse.innerHTML = "";
+        //showresponse.innerHTML = ""; 
         console.log("Retrieved JSON", JSON.parse(responseText));
         let responseJSON = JSON.parse(responseText);
         for (let i = 0; i < responseJSON.length; i++) {
@@ -35,6 +35,7 @@ var P_3_4Server;
                 "<br> Vorname: " + responseJSON[i].fname +
                 "<br> Nachname: " + responseJSON[i].lname +
                 "<br> E-Mail: " + responseJSON[i].email + "<br>";
+            showresponse.appendChild(temp);
         }
     }
     function showResponseFunc(text) {

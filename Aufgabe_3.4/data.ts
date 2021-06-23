@@ -28,7 +28,7 @@ namespace P_3_4Server {
         let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
 
-        showresponse.innerHTML = "";
+        //showresponse.innerHTML = ""; 
         console.log("Retrieved JSON", JSON.parse(responseText));
         let responseJSON: CollectionData[] = JSON.parse(responseText);
 
@@ -39,6 +39,7 @@ namespace P_3_4Server {
         "<br> Vorname: " + responseJSON[i].fname +
         "<br> Nachname: " + responseJSON[i].lname +
         "<br> E-Mail: " + responseJSON[i].email + "<br>";
+        showresponse.appendChild(temp);
         }
 
     }
