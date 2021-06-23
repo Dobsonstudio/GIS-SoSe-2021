@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace P_3_4Server {
     let mongoCollection: Mongo.Collection;
-    let mongoDatabase: string = "mongodb+srv://dobsonstudio:<password>@gis-sose2021.1lic1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    let mongoDatabase: string = "mongodb+srv://dobsonstudio:Test1Passwort@gis-sose2021.1lic1.mongodb.net/Test1?retryWrites=true&w=majority";
     //Nachricht, dass der Server startet
     let port: number = Number(process.env.PORT);
     if (!port)
