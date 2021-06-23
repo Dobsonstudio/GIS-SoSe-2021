@@ -7,7 +7,7 @@ namespace P_3_4Server {
         handleSubmit();
     });
     document.getElementById("callFromDB").addEventListener("click", function(): void {
-        path = "callDB";
+        path = "/callDB";
         handleSubmit();
     });
     
@@ -35,7 +35,7 @@ namespace P_3_4Server {
                 let tempDelete: HTMLButtonElement = <HTMLButtonElement> document.createElement("button");
                 tempDelete.className = "deleteBtn";
                 tempDelete.addEventListener("click", async function(): Promise<void> {
-                    await fetch("https://dobsonstudio2021.herokuapp.com/delete?_id=" + responseJSON[i]._id, {method: "get"}); //todo change to heroku
+                    await fetch("https://dobsonstudio2021.herokuapp.com/delete?_id=" + responseJSON[i]._id, {method: "get"});
                     temp.innerHTML = "deleted";
                 } );
 
