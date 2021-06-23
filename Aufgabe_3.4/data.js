@@ -14,8 +14,8 @@ var P_3_4Server;
         let responseText = await response.text();
         console.log(responseText);
         showResponseFunc(responseText);
-        let form = document.getElementById("formular");
-        form.reset();
+        //let form: HTMLFormElement = <HTMLFormElement>document.getElementById("formular");
+        //form.reset();
     }
     async function callFromDB() {
         let formData = new FormData(document.forms[0]);

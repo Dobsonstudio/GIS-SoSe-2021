@@ -15,8 +15,8 @@ namespace P_3_4Server {
             
         console.log(responseText);
         showResponseFunc(responseText);
-        let form: HTMLFormElement = <HTMLFormElement>document.getElementById("formular");
-        form.reset();
+        //let form: HTMLFormElement = <HTMLFormElement>document.getElementById("formular");
+        //form.reset();
         }    
 
     async function callFromDB(): Promise<void> {
