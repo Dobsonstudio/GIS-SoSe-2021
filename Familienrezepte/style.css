@@ -68,6 +68,54 @@ main {
     margin: auto;
 }
 
+#menu {
+    z-index: 1;
+    background-color: white;
+    width: 800px;
+    height: 100px;
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    /*border-radius: 50%;*/
+}
+
+#content {
+    z-index: 1;
+    background-color: white;
+    width: 800px;
+    height: 250px;
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    /*border-radius: 50%;*/
+}
+
+#loginblock {
+    z-index: 1;
+    background-color: white;
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    /*border-radius: 50%;*/
+}
+
+#loginform {
+    line-height: 1.5em;
+    margin-top: 30px;
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+}
+
+::placeholder {
+    color: rgb(190, 190, 190);
+    font-family: Tahoma, sans-serif;
+}
+
 /* Media queries */
 
 @media only screen and (max-width: 600px) {
@@ -97,8 +145,8 @@ main {
       margin-left: 35%;
     }
     main {
-      width: 500px;
-      max-width: 500px;
+      width: 800px;
+      margin: auto;
     }
     .menu {
       position: absolute;
@@ -117,15 +165,15 @@ main {
   
   @media only screen and (max-width: 320px) {
     #headline {
-      font-size: 2em;
+      font-size: 1.5em;
       letter-spacing: -2px;
     }
     #subtitle {
-      font-size: 1.5em;
+      font-size: 1em;
       top: 10px;
     }
     #sitetitle {
-        font-size: 1em;
+        font-size: .75em;
         margin-top: 5px;
     }
     #circle {
@@ -133,15 +181,13 @@ main {
       max-width: 300px;
       margin-top: 70px;
     }
-    .facebook {
-      margin-top: -18%;
-      margin-left: 35%;
-      position: absolute;
-    }
     main {
       width: 300px;
       max-width: 300px;
       margin: auto;
+    }
+    #loginblock {
+        max-width: 300px;
     }
     /*.menu {
       position: absolute;
