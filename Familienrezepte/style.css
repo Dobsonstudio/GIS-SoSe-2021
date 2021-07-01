@@ -67,3 +67,102 @@ main {
     width: 800px;
     margin: auto;
 }
+
+/* Media queries */
+
+@media only screen and (max-width: 600px) {
+    #headline {
+      font-size: 6em;
+      letter-spacing: -11px;
+    }
+    #headersubtitle {
+      font-size: 1em;
+      max-width: 1000px;
+      margin-left: 35%;
+      margin-top: 1%
+    }
+    #headertext {
+      font-size: 1em;
+      max-width: 300px;
+      margin-left: 35%;
+      margin-top: 2%
+    }
+    .splatter {
+      max-width: 200px;
+      max-height: 200px;
+      margin-left: -10%;
+    }
+    #greencircle {
+      max-height: 500px;
+      max-width: 500px;
+      margin-top: 250px;
+    }
+    .facebook {
+      margin-top: 3%;
+      margin-left: 35%;
+    }
+    main {
+      width: 500px;
+      max-width: 500px;
+    }
+    .menu {
+      position: absolute;
+      margin-left: 73.5%;
+      top: 200px;
+      background-color: black;
+    }
+    .up_arrow {
+      margin-left: 35%;
+      opacity: 50%;
+    }
+    .copyright {
+      margin-left: 10%;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    #headline {
+      font-size: 3.5em;
+      letter-spacing: -8px;
+    }
+    #headersubtitle {
+      font-size: 1em;
+      width: 170px;
+      max-width: 170px;
+      margin-left: 35%;
+      margin-top: 5%;
+    }
+    #headertext {
+      visibility: hidden;
+    }
+    .splatter {
+      max-width: 150px;
+      max-height: 150px;
+      margin-left: -10%;
+    }
+    #greencircle {
+      max-height: 300px;
+      max-width: 300px;
+      margin-top: 300px;
+    }
+    .facebook {
+      margin-top: -18%;
+      margin-left: 35%;
+      position: absolute;
+    }
+    main {
+      width: 300px;
+      max-width: 300px;
+      margin: auto;
+    }
+    .menu {
+      position: absolute;
+      margin-left: 60%;
+      top: 120px;
+      background-color: black;
+    }
+  }
+  
+  article p {
+    color: #666666;
+  }
