@@ -68,6 +68,7 @@ h2 {
     height: 600px;
     border-radius: 50%;
     background-color: white;
+    margin: auto;
   }
 
 /* Menu */
@@ -119,9 +120,8 @@ h2 {
     width: 300px;
     position: relative;
     top: -25px;
-    left: 50%;
-    transform:translate(-50%, -50%);
     /*border-radius: 50%;*/
+    margin: auto;
 }
 
 #loginform {
@@ -170,6 +170,9 @@ h2 {
       max-width: 450px;
       margin-top: 40px;
     }
+    #loginblock {
+        margin: auto;
+    }
     main {
       width: 600px;
       margin: auto;
@@ -201,6 +204,9 @@ h2 {
       max-height: 300px;
       max-width: 300px;
       margin-top: 70px;
+    }
+    #loginblock {
+        margin: auto;
     }
     main {
       width: 320px;
