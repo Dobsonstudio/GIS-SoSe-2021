@@ -1,3 +1,61 @@
+/* Header */
+
+header {
+  height: 600px;
+}
+
+#headercontent {
+  margin: auto;
+  z-index: 2;
+}
+
+#circle {
+  z-index: 1;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Headline */
+
+#headline {
+  font-size: 4em;
+  z-index: 2;
+  letter-spacing: -5px;
+  position: relative;
+  margin: auto;
+  top: 15px;
+  text-align: center;
+}
+
+#subtitle {
+  font-size: 2.5em;
+  font-family: 'Brush Script MT', cursive;
+  z-index: 2;
+  position: relative;
+  margin: auto;
+  top: 3px;
+  text-align: center;
+}
+
+#sitetitle {
+  font-size: 1.5em;
+  z-index: 2;
+  position: relative;
+  margin: auto;
+  top: 30px;
+  text-align: center;
+  margin: auto;
+  color: black;
+}
+
+/* Body */
+
 body {
     background-image: url("./media/backgroundsmall01.png");
     background-repeat: repeat;
@@ -23,49 +81,10 @@ h2 {
     color: #BB8C86;
 }
 
-/* Headline */
+/* Footer */
 
-#headline {
-    font-size: 4em;
-    z-index: 2;
-    letter-spacing: -5px;
-    position: relative;
-    margin: auto;
-    top: 15px;
-    text-align: center;
-}
-  
-#subtitle {
-    font-size: 2.5em;
-    font-family: 'Brush Script MT', cursive;
-    z-index: 2;
-    position: relative;
-    margin: auto;
-    top: 3px;
-    text-align: center;
-}
-
-#sitetitle {
-    font-size: 1.5em;
-    z-index: 2;
-    color: black;
-    position: relative;
-    margin: auto;
-    top: 30px;
-    text-align: center;
-    margin: auto;
-}
-
-#circle {
-    z-index: 1;
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background-color: white;
+footer {
+  margin: auto;
 }
 
 /* Menu */
@@ -76,19 +95,18 @@ h2 {
     width: 800px;
     height: 50px;
     position: relative;
-    top: 140px;
-    left: 50%;
-    transform:translate(-50%, -50%);
+    margin: auto;
+    margin-top: -300px;
     /*border-radius: 50%;*/
 }
 
 #menu {
     font-family: Tahoma, sans serif;
     text-align: center; 
-    margin: 15px;
     height: 20px;
     max-height: 20px;
     padding: 15px;
+    margin: auto;
 }
 
 /* Content */
@@ -99,9 +117,8 @@ h2 {
     width: 800px;
     height: 250px;
     position: relative;
-    top: 250px;
-    left: 50%;
-    transform:translate(-50%, -50%);
+    margin: auto;
+    margin-top: 20px;
     /*border-radius: 50%;*/
 }
 
@@ -145,29 +162,27 @@ h2 {
 /* Media query 600px */
 
 @media only screen and (max-width: 600px) {
+
+    header {
+      width: 400px;
+    }
     #headline {
       font-size: 2.5em;
       letter-spacing: -3px;
-      text-align: center;
     }
     #subtitle {
       font-size: 1.75em;
-      margin-left: 50%;
-      margin-top: 25px;
+      margin-top: 5px;
       width: 100%;
-      margin: auto;
     }
     #sitetitle {
       font-size: 1.25em;
-      margin-left: 50%;
-      transform:translate(-50%, -50%);  
-      top: 35px
+      margin-top: -10px;
     }
     #circle {
       width: 400px;
       height: 400px;
-      top: -25px;
-      margin: auto;
+      margin-top: 25px;
     }
     #loginblock {
         margin: auto;
@@ -177,13 +192,10 @@ h2 {
       margin: auto;
     }
     #menublock {
-      left: 50%;
-      transform:translate(-50%, -50%);
       width: 400px;
+      margin-top: -50px;
     }
     #contentbox {
-      left: 50%;
-      transform:translate(-50%, -50%);
       width: 400px;
     }
 }
@@ -191,6 +203,10 @@ h2 {
 /* Media query 320px */
 
   @media only screen and (max-width: 320px) {
+
+    header {
+      width: 280px;
+    }
     #headline {
       font-size: 1.8em;
       letter-spacing: -2px;
@@ -198,27 +214,27 @@ h2 {
     #subtitle {
       font-size: 1.3em;
       top: 10px;
+      width: 100%;
     }
     #sitetitle {
         font-size: .8em;
         margin-top: 5px;
     }
     #circle {
-      max-height: 250px;
-      max-width: 250px;
-      top: 15px;
-      margin: auto;
+      width: 280px;
+      height: 280px;
+      margin-top: 60px;
     }
     #loginblock {
         margin: auto;
         top: 350px;
     }
     main {
-      width: 250px;
+      width: 280px;
       margin: auto;
     }
     #loginblock {
-        max-width: 250px;
+      width: 280px;
     }
     /*.menu {
       position: absolute;
@@ -227,14 +243,10 @@ h2 {
       background-color: black;
     }*/
     #menublock {
-      left: 50%;
-      transform:translate(-50%, -50%);
-      width: 250px;
+      width: 280px;
       height: 70px;
     }
     #contentbox {
-      left: 50%;
-      transform:translate(-50%, -50%);
-      width: 250px;
+      width: 280px;
     }
   }
