@@ -204,9 +204,9 @@ h2 {
         margin-top: 5px;
     }
     #circle {
-      max-height: 280px;
-      max-width: 280px;
-      top: 0px;
+      max-height: 250px;
+      max-width: 250px;
+      top: 15px;
       margin: auto;
     }
     #loginblock {
@@ -214,11 +214,11 @@ h2 {
         top: 350px;
     }
     main {
-      width: 280px;
+      width: 250px;
       margin: auto;
     }
     #loginblock {
-        max-width: 280px;
+        max-width: 250px;
     }
     /*.menu {
       position: absolute;
@@ -229,12 +229,12 @@ h2 {
     #menublock {
       left: 50%;
       transform:translate(-50%, -50%);
-      width: 280px;
+      width: 250px;
       height: 70px;
     }
     #contentbox {
       left: 50%;
       transform:translate(-50%, -50%);
-      width: 280px;
+      width: 250px;
     }
   }
