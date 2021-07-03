@@ -173,14 +173,8 @@ h2 {
         margin: auto;
     }
     main {
-      width: 600px;
+      width: 400px;
       margin: auto;
-    }
-    .menu {
-      position: absolute;
-      margin-left: 73.5%;
-      top: 200px;
-      background-color: black;
     }
     #menublock {
       left: 50%;
@@ -220,8 +214,7 @@ h2 {
         top: 350px;
     }
     main {
-      width: 320px;
-      max-width: 320px;
+      width: 300px;
       margin: auto;
     }
     #loginblock {
