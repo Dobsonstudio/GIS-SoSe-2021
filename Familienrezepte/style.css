@@ -182,6 +182,16 @@ h2 {
       top: 200px;
       background-color: black;
     }
+    #menublock {
+      left: 50%;
+      transform:translate(-50%, -50%);
+      width: 400px;
+    }
+    #contentbox {
+      left: 50%;
+      transform:translate(-50%, -50%);
+      width: 400px;
+    }
 }
   
 /* Media query 320px */
@@ -223,4 +233,14 @@ h2 {
       top: 120px;
       background-color: black;
     }*/
+    #menublock {
+      left: 50%;
+      transform:translate(-50%, -50%);
+      width: 300px;
+    }
+    #contentbox {
+      left: 50%;
+      transform:translate(-50%, -50%);
+      width: 300px;
+    }
   }
