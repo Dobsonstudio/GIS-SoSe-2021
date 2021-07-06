@@ -11,7 +11,7 @@
     "@types/node": "^15.12.1"
   },
   "scripts": {
-    "start": "node Aufgabe_3.4/server.js"
+    "start": "node Familienrezepte/server.js"
   },
   "repository": {
     "type": "git",
