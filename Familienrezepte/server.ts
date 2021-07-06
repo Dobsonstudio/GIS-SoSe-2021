@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace Rezepte_Server {
     let mongoCollection: Mongo.Collection;
-    let mongoDatabase: string = "mongodb+srv://dobsonstudio:rezepte_user@gis-sose2021.1lic1.mongodb.net/rezepte_user?retryWrites=true&w=majority";
+    let mongoDatabase: string = "mongodb+srv://dobsonstudio:dobsonstudio@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
     let port: number = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -16,7 +16,7 @@ export namespace Rezepte_Server {
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-        mongoCollection = mongoClient.db("rezepte_user").collection("rezepte_user");
+        mongoCollection = mongoClient.db("rezepte").collection("rezepteUser");
         console.log("Database connection", mongoCollection != undefined);
     }
 
@@ -44,11 +44,6 @@ export namespace Rezepte_Server {
             mongoCollection.insertOne(questdata);
             _response.write("Added {Username: " + questdata.username + ", Passwort: " + questdata.password + "} to Database");
         }
-        else if (quest.pathname == "/callDB") {
-            let collectionData: AllData[] = await mongoCollection.find().toArray();
-            let cDataJSON: string = JSON.stringify(collectionData);
-            _response.write(cDataJSON);
-        }
         _response.end();
     }
 
@@ -56,9 +51,4 @@ export namespace Rezepte_Server {
         username: string;
         password: string;
     }
-
-    interface AllData extends FormElements {
-        _id: string;
-    }
-    
 }
