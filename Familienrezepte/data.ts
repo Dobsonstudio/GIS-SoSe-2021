@@ -19,7 +19,8 @@ namespace Rezepte_Server {
     function showResponseFunc(text: string): void {
         showresponse.innerHTML = text;
     }
-    interface FormElements {
+
+    export interface FormElements {
         username: string;
         password: string;
     }

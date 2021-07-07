@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@types/mongodb": "^3.6.18",
-    "mongodb": "^3.6.9"
+    "@types/mongodb": "^3.6.20",
+    "mongodb": "^3.6.10"
   },
   "name": "gis-sose-2021",
   "description": "It's not like I want you to read me or anything ...baka.",
