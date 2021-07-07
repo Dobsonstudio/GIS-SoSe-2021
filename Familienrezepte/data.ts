@@ -9,7 +9,7 @@ namespace Rezepte_Server {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "/addDB";
         url += "?" + query.toString();  
-        let response: Response = await fetch(url, { method: "get"});
+        let response: Response = await fetch(url, { method: "get", mode: "no-cors"});
         let responseText: string = await response.text();
             
         console.log(responseText);

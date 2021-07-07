@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Rezepte_Server = void 0;
-const Http = require("http"); //import vom http
+const Http = require("http");
 const Mongo = require("mongodb");
 var Rezepte_Server;
 (function (Rezepte_Server) {
