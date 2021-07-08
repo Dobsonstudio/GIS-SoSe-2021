@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace Rezepte_Server {
     let mongoCollection: Mongo.Collection;
-    let mongoDatabase: string = "mongodb+srv://dobsonstudio:Test1Passwort@gis-sose2021.1lic1.mongodb.net/Test1?retryWrites=true&w=majority";
+    let mongoDatabase: string = "mongodb+srv://dobsonstudio:apfelsaft@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
 
     let port: number = Number(process.env.PORT);
     if (!port)
@@ -18,7 +18,7 @@ export namespace Rezepte_Server {
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-        mongoCollection = mongoClient.db("Test1").collection("Test1");
+        mongoCollection = mongoClient.db("rezepte").collection("rezepteUser");
         console.log("Database connection", mongoCollection != undefined);
     }
 
