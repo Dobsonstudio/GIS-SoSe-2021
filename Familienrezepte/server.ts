@@ -5,12 +5,14 @@ import * as Mongo from "mongodb";
 export namespace Rezepte_Server {
     let mongoCollection: Mongo.Collection;
     let mongoDatabase: string = "mongodb+srv://rezeptAdmin:pw1234@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
-    
+
     let port: number = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    startServer(port);
+        
     connectToMongoDatabase(mongoDatabase);
+    startServer(port);
+
 
     async function connectToMongoDatabase(url: string): Promise<void> {
         console.log("Starting connection");
