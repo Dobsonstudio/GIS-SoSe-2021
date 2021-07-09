@@ -6,7 +6,7 @@ const Mongo = require("mongodb");
 var Rezepte_Server;
 (function (Rezepte_Server) {
     let mongoCollection;
-    let mongoDatabase = "mongodb+srv://dobsonstudio:dobsonstudio@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
+    let mongoDatabase = "mongodb+srv://dobsonstudio:apfelsaft@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -17,8 +17,9 @@ var Rezepte_Server;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-        mongoCollection = mongoClient.db("rezepte").collection("rezepteUser");
+        mongoCollection = mongoClient.db("rezepte").collection("rezepte");
         console.log("Database connection", mongoCollection != undefined);
+        console.log("Collection undefined", mongoCollection == undefined);
     }
     function startServer(port) {
         console.log("Starting server");

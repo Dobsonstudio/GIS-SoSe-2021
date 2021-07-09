@@ -9,7 +9,7 @@ var Rezepte_Server;
         let query = new URLSearchParams(formData);
         url += "/addDB";
         url += "?" + query.toString();
-        let response = await fetch(url, { method: "get", mode: "no-cors" });
+        let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
         console.log(responseText);
         showResponseFunc(responseText);
