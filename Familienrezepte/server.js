@@ -43,7 +43,7 @@ var Rezepte_Server;
         let questdata = { username: quest.searchParams.get("username"), password: quest.searchParams.get("password") };
         if (quest.pathname == "/addDB") {
             mongoCollection.insertOne(questdata);
-            _response.write("Added {Username: " + questdata.username + ", Passwort: " + questdata.password + "} to Database");
+            _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
         }
         _response.end();
     }
