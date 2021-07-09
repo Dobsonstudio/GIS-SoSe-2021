@@ -97,16 +97,16 @@ h2 {
     z-index: 1;
     background-color: white;
     width: 800px;
-    height: 250px;
     position: relative;
-    top: 250px;
+    top: 125px;
     left: 50%;
-    transform:translate(-50%, -50%);
+    transform:translate(-50%, 0);
     /*border-radius: 50%;*/
 }
 
 #content {
-    padding: 15px;
+    padding: 10px;
+    text-align: center;
 }
 
 /* Login Box */
@@ -128,13 +128,35 @@ h2 {
     font-family: Tahoma, sans-serif;
     margin: 20px;
     margin-top: 10px;
-    padding: 15px;
+    padding-top: 15px;
 }
 
 #bottomtextlogin {
     color:rgb(190, 190, 190);
     font-size: .8em;
     line-height: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#response {
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  color: green;
+  padding-bottom: 15px;
+  font-size: .8em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#responseLogin {
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  color: red;
+  padding-bottom: 15px;
+  font-size: .8em;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 ::placeholder {

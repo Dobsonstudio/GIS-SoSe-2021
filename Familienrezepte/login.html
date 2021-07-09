@@ -20,15 +20,20 @@
 
     <main>
         <div id="loginblock">
-            <form id="loginform" action="">
+            <form id="loginform"
+            >
                 <label for="username">Nutzername</label><br>
-                <input type="text" id="username" placeholder="Nutzername"><br>
+                <input type="text" id="username" name="username" placeholder="Nutzername"><br>
+
                 <label for="password">Passwort</label><br>
-                <input type="text" id="password" placeholder="Passwort eingeben"><br><br>
-                <input type="submit" value="Einloggen"><br>
+                <input type="text" id="password" name="password" placeholder="Passwort eingeben"><br><br>
+
+                <button type="button" id="login">Einloggen</button><br>
+
                 <p id="bottomtextlogin">Du hast noch keinen Account? Hier <a href="./register.html">registrieren</a></p>
             </form>
         </div>
+        <div id="responseLogin"></div>
     </main>
 
 </body>
