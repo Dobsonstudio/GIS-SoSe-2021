@@ -9,9 +9,12 @@ export namespace Rezepte_Server {
     let port: number = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    startServer(port);
-    connectToMongoDatabase(mongoDatabase);
+    start();
 
+    async function start(): Promise<void> {
+        await connectToMongoDatabase(mongoDatabase);
+        startServer(port);
+    } 
 
     async function connectToMongoDatabase(url: string): Promise<void> {
         console.log("Starting connection");

@@ -10,8 +10,11 @@ var Rezepte_Server;
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    startServer(port);
-    connectToMongoDatabase(mongoDatabase);
+    start();
+    async function start() {
+        await connectToMongoDatabase(mongoDatabase);
+        startServer(port);
+    }
     async function connectToMongoDatabase(url) {
         console.log("Starting connection");
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
