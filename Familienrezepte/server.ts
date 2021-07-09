@@ -21,7 +21,7 @@ export namespace Rezepte_Server {
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-        mongoCollection = mongoClient.db("rezepte").collection("rezepte");
+        mongoCollection = mongoClient.db("rezepte").collection("rezepteUser");
         console.log("Database connection", mongoCollection != undefined);
         console.log("Collection undefined", mongoCollection == undefined);
     }
