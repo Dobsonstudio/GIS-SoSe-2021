@@ -1,4 +1,3 @@
-import { Interface } from "readline";
 
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
