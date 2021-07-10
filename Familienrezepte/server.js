@@ -53,8 +53,7 @@ var Rezepte_Server;
                 _response.write("Login fehlgeschlagen.");
             }
             else {
-                _response.writeHead(301, { Location: "http" + "://" +
-                        _request.headers.host + "/allrecipes.html" });
+                Response.redirect("./allrecipes.html");
             }
         }
         _response.end();
