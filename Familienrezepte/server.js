@@ -49,7 +49,7 @@ var Rezepte_Server;
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
         }
         else if (quest.pathname == "/login") {
-            if (mongoCollection.findOne(questdata) == null) {
+            if ("username" == null) {
                 _response.write("Login fehlgeschlagen.");
                 console.log("felder dürfen nicht leer sein");
             }
