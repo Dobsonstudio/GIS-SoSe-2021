@@ -52,13 +52,16 @@ export namespace Rezepte_Server {
 
         let quest: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
         let questdata: FormElements = {username: quest.searchParams.get("username"), password: quest.searchParams.get("password")};
+        
         if (quest.pathname == "/addDB") {
             mongoCollection.insertOne(questdata);
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
 
         } else if (quest.pathname == "/login") {
+
             if (mongoCollection.findOne(questdata) == null) {
                 _response.write("Login fehlgeschlagen.");
+                console.log("felder dürfen nicht leer sein");
             } else {
                 /*Response.redirect("./allrecipes.html");*/
                 window.location.href = "./allrecipes.html";

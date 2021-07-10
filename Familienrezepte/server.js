@@ -51,6 +51,7 @@ var Rezepte_Server;
         else if (quest.pathname == "/login") {
             if (mongoCollection.findOne(questdata) == null) {
                 _response.write("Login fehlgeschlagen.");
+                console.log("felder dürfen nicht leer sein");
             }
             else {
                 /*Response.redirect("./allrecipes.html");*/
