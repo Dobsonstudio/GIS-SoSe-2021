@@ -49,14 +49,12 @@ var Rezepte_Server;
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
         }
         else if (quest.pathname == "/login") {
-            if ("username" == null) {
+            if (mongoCollection.findOne(questdata) == null) {
                 _response.write("Login fehlgeschlagen.");
-                console.log("felder dürfen nicht leer sein");
             }
             else {
                 /*Response.redirect("./allrecipes.html");*/
                 window.location.href = "./allrecipes.html";
-                _response.write("Login erfolgreich.");
             }
         }
         _response.end();
