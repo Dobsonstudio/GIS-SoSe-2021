@@ -21,7 +21,13 @@ export namespace Rezepte_Server {
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
+
+        //if
         mongoCollection = mongoClient.db("rezepte").collection("rezepteUser");
+
+        //else
+        //mongoCollection = mongoClient.db("rezepte").collection("rezepte");
+
         console.log("Database connection", mongoCollection != undefined);
         console.log("Collection undefined", mongoCollection == undefined);
     }
@@ -49,7 +55,10 @@ export namespace Rezepte_Server {
         if (quest.pathname == "/addDB") {
             mongoCollection.insertOne(questdata);
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
-            //window.open( "/allrecipes.html");
+
+        } else if (quest.pathname == "/login") {
+            mongoCollection.findOne(questdata);
+            _response.write("TEST");
         }
         _response.end();
     }
@@ -58,4 +67,19 @@ export namespace Rezepte_Server {
         username: string;
         password: string;
     }
+/*
+    interface NewRecipe
+        rezeptName: string;
+        ingredient1: string;
+        ingredient2: string;
+        ingredient3: string;
+        ingredient4: string;
+        ingredient5: string;
+        ingredient6: string;
+        ingredient7: string;
+        ingredient8: string;
+        ingredient9: string;
+        ingredient10: string;
+        zubereitung: string; //string array?
 }
+*/
