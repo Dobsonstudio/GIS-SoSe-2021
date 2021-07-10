@@ -54,7 +54,8 @@ var Rezepte_Server;
             }
             else {
                 /*Response.redirect("./allrecipes.html");*/
-                window.location.href = "./allrecipes.html";
+                /*window.location.href = "./allrecipes.html";*/
+                console.log("repsonse from server.ts");
             }
         }
         _response.end();
