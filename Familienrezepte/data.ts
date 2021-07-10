@@ -1,8 +1,10 @@
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     document.getElementById("addToDB").addEventListener("click", addToDB);
-    document.getElementById("buttonLogin").addEventListener("click", login);
     document.getElementById("addNewRecipe").addEventListener("click", addNewRecipe);
+
+    let loginButton: HTMLInputElement = <HTMLInputElement> document.getElementById("buttonLogin"); 
+    loginButton.addEventListener("click", login);
     
     async function addToDB(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
