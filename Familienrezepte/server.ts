@@ -3,7 +3,8 @@ import * as Url from "url";
 import * as Mongo from "mongodb";
 
 export namespace Rezepte_Server {
-    let mongoCollection: Mongo.Collection;
+    let userCollection: Mongo.Collection;
+    let recipeCollection: Mongo.Collection;
     let mongoDatabase: string = "mongodb+srv://dobsonstudio:apfelsaft@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
 
     let port: number = Number(process.env.PORT);
@@ -21,15 +22,9 @@ export namespace Rezepte_Server {
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-
-        //if
-        mongoCollection = mongoClient.db("rezepte").collection("rezepteUser");
-
-        //else
-        //mongoCollection = mongoClient.db("rezepte").collection("rezepte");
-
-        console.log("Database connection", mongoCollection != undefined);
-        console.log("Collection undefined", mongoCollection == undefined);
+        
+        userCollection = mongoClient.db("rezepte").collection("rezepteUser");
+        recipeCollection = mongoClient.db("rezepte").collection("rezepte");
     }
 
     function startServer(port: number | string): void {
@@ -52,20 +47,51 @@ export namespace Rezepte_Server {
 
         let quest: URL = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
         let questdata: FormElements = {username: quest.searchParams.get("username"), password: quest.searchParams.get("password")};
-        console.log(await mongoCollection.find({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}).toArray());
-        if (quest.pathname == "/addDB") {
-            mongoCollection.insertOne(questdata);
-            _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
 
+        let questdataRecipes: NewRecipe = {
+        authorName: quest.searchParams.get("authorName"),
+        rezeptName: quest.searchParams.get("rezeptName"), 
+        ingredient: [
+        quest.searchParams.get("ingredient1"), quest.searchParams.get("ingredient2"), 
+        quest.searchParams.get("ingredient3"), quest.searchParams.get("ingredient4"), 
+        quest.searchParams.get("ingredient5"), quest.searchParams.get("ingredient6"), 
+        quest.searchParams.get("ingredient7"), quest.searchParams.get("ingredient8"), 
+        quest.searchParams.get("ingredient9"), quest.searchParams.get("ingredient10")
+        ], 
+        zubereitung: quest.searchParams.get("zubereitung")};
         
-        } else if (quest.pathname == "/login") {
-            if (await mongoCollection.find({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}).toArray()) {
-                _response.write("Login erfolgreich.");
-            } else { 
-                _response.write("Login fehlgeschlagen.");
-            }
-
+        if (quest.pathname == "/addNewRecipe") {
+            recipeCollection.insertOne(questdataRecipes);
+            _response.write("Dein Rezept wurde veröffentlicht.");
         }
+
+        if (quest.pathname == "/addDB") {
+            userCollection.insertOne(questdata);
+            let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length);
+            if (userTaken == 0)
+            _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
+        } else {
+            _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
+            _response.end();
+        }
+        
+        if (quest.pathname == "/login") {
+            let checkUser: number = (await userCollection.find({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}).toArray()).length);
+        
+            if (checkUser == 1) {
+                _response.write("Login erfolgreich.");
+            } else {
+                _response.write("Login fehlgeschlagen.");
+
+            }
+        }
+
+        while (quest.pathname == "/allrecipes") {
+            let collectionData: AllData[] = await recipeCollection.find().toArray();
+            let cDataJSON: string = JSON.stringify(collectionData);
+            _response.write(cDataJSON);
+        }
+
         _response.end();
     }
 
@@ -73,19 +99,15 @@ export namespace Rezepte_Server {
         username: string;
         password: string;
     }
-/*
-    interface NewRecipe
+
+    interface NewRecipe {
+        authorName: string;
         rezeptName: string;
-        ingredient1: string;
-        ingredient2: string;
-        ingredient3: string;
-        ingredient4: string;
-        ingredient5: string;
-        ingredient6: string;
-        ingredient7: string;
-        ingredient8: string;
-        ingredient9: string;
-        ingredient10: string;
-        zubereitung: string; //string array?
+        ingredient: string[];
+        zubereitung: string;
+    }
+
+    interface AllData extends NewRecipe {
+        _id: string;
+    }
 }
-*/

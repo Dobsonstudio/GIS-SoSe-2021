@@ -5,7 +5,8 @@ const Http = require("http");
 const Mongo = require("mongodb");
 var Rezepte_Server;
 (function (Rezepte_Server) {
-    let mongoCollection;
+    let userCollection;
+    let recipeCollection;
     let mongoDatabase = "mongodb+srv://dobsonstudio:apfelsaft@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
     let port = Number(process.env.PORT);
     if (!port)
@@ -20,12 +21,8 @@ var Rezepte_Server;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-        //if
-        mongoCollection = mongoClient.db("rezepte").collection("rezepteUser");
-        //else
-        //mongoCollection = mongoClient.db("rezepte").collection("rezepte");
-        console.log("Database connection", mongoCollection != undefined);
-        console.log("Collection undefined", mongoCollection == undefined);
+        userCollection = mongoClient.db("rezepte").collection("rezepteUser");
+        recipeCollection = mongoClient.db("rezepte").collection("rezepte");
     }
     function startServer(port) {
         console.log("Starting server");
@@ -44,52 +41,47 @@ var Rezepte_Server;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         let quest = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
         let questdata = { username: quest.searchParams.get("username"), password: quest.searchParams.get("password") };
-        console.log(await mongoCollection.find({ username: quest.searchParams.get("username"), password: quest.searchParams.get("password") }).toArray());
-        if (quest.pathname == "/addDB") {
-            mongoCollection.insertOne(questdata);
-            _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
+        let questdataRecipes = {
+            authorName: quest.searchParams.get("authorName"),
+            rezeptName: quest.searchParams.get("rezeptName"),
+            ingredient: [
+                quest.searchParams.get("ingredient1"), quest.searchParams.get("ingredient2"),
+                quest.searchParams.get("ingredient3"), quest.searchParams.get("ingredient4"),
+                quest.searchParams.get("ingredient5"), quest.searchParams.get("ingredient6"),
+                quest.searchParams.get("ingredient7"), quest.searchParams.get("ingredient8"),
+                quest.searchParams.get("ingredient9"), quest.searchParams.get("ingredient10")
+            ],
+            zubereitung: quest.searchParams.get("zubereitung")
+        };
+        if (quest.pathname == "/addNewRecipe") {
+            recipeCollection.insertOne(questdataRecipes);
+            _response.write("Dein Rezept wurde veröffentlicht.");
         }
-        else if (quest.pathname == "/login") {
-            if (await mongoCollection.find({ username: quest.searchParams.get("username"), password: quest.searchParams.get("password") }).toArray()) {
+        if (quest.pathname == "/addDB") {
+            userCollection.insertOne(questdata);
+            let userTaken = (await userCollection.find({ username: quest.searchParams.get("username") }).toArray()).length;
+            if (userTaken == 0)
+                _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
+        }
+        else {
+            _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
+            _response.end();
+        }
+        if (quest.pathname == "/login") {
+            let checkUser = (await userCollection.find({ username: quest.searchParams.get("username"), password: quest.searchParams.get("password") }).toArray()).length;
+            if (checkUser == 1) {
                 _response.write("Login erfolgreich.");
             }
             else {
                 _response.write("Login fehlgeschlagen.");
             }
         }
+        while (quest.pathname == "/allrecipes") {
+            let collectionData = await recipeCollection.find().toArray();
+            let cDataJSON = JSON.stringify(collectionData);
+            _response.write(cDataJSON);
+        }
         _response.end();
     }
-    /*
-        interface NewRecipe
-            rezeptName: string;
-            ingredient1: string;
-            ingredient2: string;
-            ingredient3: string;
-            ingredient4: string;
-            ingredient5: string;
-            ingredient6: string;
-            ingredient7: string;
-            ingredient8: string;
-            ingredient9: string;
-            ingredient10: string;
-            zubereitung: string; //string array?
-    }
-    */
 })(Rezepte_Server = exports.Rezepte_Server || (exports.Rezepte_Server = {}));
-/*
-    interface NewRecipe
-        rezeptName: string;
-        ingredient1: string;
-        ingredient2: string;
-        ingredient3: string;
-        ingredient4: string;
-        ingredient5: string;
-        ingredient6: string;
-        ingredient7: string;
-        ingredient8: string;
-        ingredient9: string;
-        ingredient10: string;
-        zubereitung: string; //string array?
-}
-*/
 //# sourceMappingURL=server.js.map

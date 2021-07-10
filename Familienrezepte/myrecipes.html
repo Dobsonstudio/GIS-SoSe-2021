@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./addNewRecipe.js" async></script>
 
     <title>Familienrezepte - Meine Rezepte</title>
 </head>
@@ -57,9 +58,10 @@
                         <label for="zubereitung">Zubereitungsanweisung</label><br>
                         <textarea type="text" id="zubereitung" name="zubereitung" placeholder="Erkläre, wie das Gericht zubereitet wird"></textarea><br><br>
         
-                        <button type="button" id="addNewRecipe">Rezept veröffentlichen</button><br><br>
+                        <button type="button" id="addNewRecipe">Rezept veröffentlichen</button><br>
                     </form>
             </div>
+            <div id="response"></div>
         </div>
     </main>
     <footer id="footer"></footer>  
