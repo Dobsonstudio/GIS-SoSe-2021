@@ -1,8 +1,6 @@
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
-import { userInfo } from "os";
-import { url } from "inspector";
 
 export namespace Rezepte_Server {
     let mongoCollection: Mongo.Collection;
