@@ -67,12 +67,12 @@ export namespace Rezepte_Server {
 
         if (quest.pathname == "/addDB") {
             userCollection.insertOne(questdata);
-            let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length);
-            if (userTaken == 0)
+            /*let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length);
+            if (userTaken == 0)*/
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
-        } else {
+        /*} else {
             _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
-            _response.end();
+            _response.end();*/
         }
         
         if (quest.pathname == "/login") {
