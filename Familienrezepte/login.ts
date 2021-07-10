@@ -15,7 +15,6 @@ namespace Rezepte_Server {
         showResponseFunc(responseText);
         window.location.href = "./allrecipes.html";
         }
-    
 
     function showResponseFunc(text: string): void {
         showresponse.innerHTML = text;
