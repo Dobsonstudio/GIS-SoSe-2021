@@ -60,7 +60,7 @@ export namespace Rezepte_Server {
             if (mongoCollection.findOne(questdata) == null) {
                 _response.write("Login fehlgeschlagen.");
             } else {
-                window.location.href = "./allrecipes.html";
+                _response.write("Login erfolgreich.");
             }
 
         }

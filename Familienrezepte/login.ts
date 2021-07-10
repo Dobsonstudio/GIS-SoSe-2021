@@ -11,9 +11,12 @@ namespace Rezepte_Server {
         let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
 
-        console.log(responseText);
-        showResponseFunc(responseText);
-        }
+        if (responseText == "Login erfolgreich.") {
+        window.location.href = "./allrecipes.html";
+        } else {
+            console.log("fehlgeschlagen");
+        }  
+    }
 
     function showResponseFunc(text: string): void {
         showresponse.innerHTML = text;

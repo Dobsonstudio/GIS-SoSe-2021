@@ -11,8 +11,12 @@ var Rezepte_Server;
         url += "?" + query.toString();
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
-        console.log(responseText);
-        showResponseFunc(responseText);
+        if (responseText == "Login erfolgreich.") {
+            window.location.href = "./allrecipes.html";
+        }
+        else {
+            console.log("fehlgeschlagen");
+        }
     }
     function showResponseFunc(text) {
         showresponse.innerHTML = text;
