@@ -61,10 +61,9 @@ export namespace Rezepte_Server {
                 _response.write("Login fehlgeschlagen.");
             } else {
                 /*Response.redirect("./allrecipes.html");*/
-                /*window.location.href = "./allrecipes.html";*/
-                console.log("repsonse from server.ts");
+                window.location.href = "./allrecipes.html";
+                _response.write("Login erfolgreich.");
             }
-
         }
         _response.end();
     }
