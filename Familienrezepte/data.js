@@ -4,8 +4,6 @@ var Rezepte_Server;
     let showresponse = document.getElementById("response");
     document.getElementById("addToDB").addEventListener("click", addToDB);
     document.getElementById("addNewRecipe").addEventListener("click", addNewRecipe);
-    let loginButton = document.getElementById("buttonLogin");
-    loginButton.addEventListener("click", login);
     async function addToDB() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";
