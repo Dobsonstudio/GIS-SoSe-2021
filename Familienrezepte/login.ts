@@ -13,6 +13,7 @@ namespace Rezepte_Server {
 
         console.log(responseText);
         showResponseFunc(responseText);
+        window.location.href = "./allrecipes.html";
         }
     
 

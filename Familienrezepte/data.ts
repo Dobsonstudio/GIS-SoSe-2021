@@ -16,7 +16,7 @@ namespace Rezepte_Server {
         console.log(responseText);
         showResponseFunc(responseText);
         }    
-
+/*
     async function login(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
@@ -29,6 +29,7 @@ namespace Rezepte_Server {
         console.log(responseText);
         showResponseFunc(responseText);
         }
+        */
 
     async function addNewRecipe(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
@@ -43,7 +44,6 @@ namespace Rezepte_Server {
         showResponseFunc(responseText);
         }  
     
-
     function showResponseFunc(text: string): void {
         showresponse.innerHTML = text;
     }
