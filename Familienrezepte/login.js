@@ -13,7 +13,6 @@ var Rezepte_Server;
         let responseText = await response.text();
         console.log(responseText);
         showResponseFunc(responseText);
-        //window.location.href = "./allrecipes.html";
     }
     function showResponseFunc(text) {
         showresponse.innerHTML = text;
