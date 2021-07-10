@@ -3,7 +3,7 @@ var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
     document.getElementById("addToDB").addEventListener("click", addToDB);
-    document.getElementById("login").addEventListener("click", login);
+    document.getElementById("buttonLogin").addEventListener("click", login);
     document.getElementById("addNewRecipe").addEventListener("click", addNewRecipe);
     async function addToDB() {
         let formData = new FormData(document.forms[0]);
