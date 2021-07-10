@@ -44,6 +44,7 @@ var Rezepte_Server;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         let quest = new URL(_request.url, "https://dobsonstudio2021.herokuapp.com/");
         let questdata = { username: quest.searchParams.get("username"), password: quest.searchParams.get("password") };
+        console.log(await mongoCollection.find({ username: quest.searchParams.get("username"), password: quest.searchParams.get("password") }).toArray());
         if (quest.pathname == "/addDB") {
             mongoCollection.insertOne(questdata);
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
