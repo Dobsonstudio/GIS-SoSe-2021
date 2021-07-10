@@ -49,6 +49,7 @@ export namespace Rezepte_Server {
         if (quest.pathname == "/addDB") {
             mongoCollection.insertOne(questdata);
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
+            window.open( "/allrecipes.html");
         }
         _response.end();
     }
