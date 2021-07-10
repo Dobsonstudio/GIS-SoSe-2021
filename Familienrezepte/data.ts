@@ -1,7 +1,7 @@
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     document.getElementById("addToDB").addEventListener("click", addToDB);
-    document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
+    document.getElementById("showAllRecipes").addEventListener("", showAllRecipes);
     
     async function addToDB(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
@@ -31,7 +31,7 @@ namespace Rezepte_Server {
 
         //showresponse.innerHTML = ""; 
         console.log("Retrieved JSON", JSON.parse(responseText));
-        let responseJSON: CollectionData[] = JSON.parse(responseText);
+        let responseJSON: AllData[] = JSON.parse(responseText);
     
         for (let i: number = 0; i < responseJSON.length; i++) {
         let temp: HTMLDivElement = <HTMLDivElement>document.createElement("div");

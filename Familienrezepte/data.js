@@ -3,7 +3,7 @@ var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
     document.getElementById("addToDB").addEventListener("click", addToDB);
-    document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
+    document.getElementById("showAllRecipes").addEventListener("", showAllRecipes);
     async function addToDB() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";
