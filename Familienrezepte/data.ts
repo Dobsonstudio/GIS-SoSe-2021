@@ -2,7 +2,7 @@ namespace Rezepte_Server {
     
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     document.getElementById("addToDB").addEventListener("click", addToDB);
-    document.getElementById("buttonLogin").addEventListener("click", buttonLogin);
+    document.getElementById("login").addEventListener("click", login);
     document.getElementById("addNewRecipe").addEventListener("click", addNewRecipe);
     
     async function addToDB(): Promise<void> {
@@ -18,7 +18,7 @@ namespace Rezepte_Server {
         showResponseFunc(responseText);
         }    
 
-    async function buttonLogin(): Promise<void> {
+    async function login(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
