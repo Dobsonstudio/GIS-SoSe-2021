@@ -57,7 +57,7 @@ export namespace Rezepte_Server {
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
 
         } else if (quest.pathname == "/login") {
-            if (mongoCollection.findOne({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}) != undefined) {
+            if (await mongoCollection.find({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}).toArray() != null) {
                 _response.write("Login erfolgreich.");
             } else { 
                 _response.write("Login fehlgeschlagen.");
