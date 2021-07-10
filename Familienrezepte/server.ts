@@ -57,8 +57,12 @@ export namespace Rezepte_Server {
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
 
         } else if (quest.pathname == "/login") {
-            mongoCollection.findOne(questdata);
-            _response.write("TEST");
+            if (mongoCollection.findOne(questdata) == null) {
+                _response.write("Login fehlgeschlagen.");
+            } else {
+                _response.writeHead(301, {Location: "./allrecipes.html"});
+            }
+
         }
         _response.end();
     }
