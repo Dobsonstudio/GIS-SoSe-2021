@@ -30,10 +30,18 @@
             <div id="content">
                 <h3>Meine Rezepte</h3>
                 <p>Hier kannst du neue Rezepte hochladen oder bestehende Rezepte bearbeiten.</p><br>
+
+                <div id="myRecipesFlex">
+                
+                </div>
+
                 <h3>Neues Rezept hochladen</h3>
 
                     <form id="newRecipe">
-                
+                        
+                        <label for="rezeptName">Rezept Name</label><br>
+                        <input type="text" id="rezeptName" name="rezeptName" placeholder="Wie heißt dein Rezept?"><br><br>
+
                         <label for="ingredient1">Zutaten</label><br>
                         <input type="text" id="ingredient1" name="ingredient1" placeholder="1."><br>
                         <input type="text" id="ingredient2" name="ingredient2" placeholder="2."><br>
@@ -44,17 +52,16 @@
                         <input type="text" id="ingredient7" name="ingredient7" placeholder="7."><br>
                         <input type="text" id="ingredient8" name="ingredient8" placeholder="8."><br>
                         <input type="text" id="ingredient9" name="ingredient9" placeholder="9."><br>
-                        <input type="text" id="ingredient10" name="ingredient10" placeholder="10."><br>
+                        <input type="text" id="ingredient10" name="ingredient10" placeholder="10."><br><br>
         
-                        <label for="password">Passwort</label><br>
-                        <input type="text" id="password" name="password" placeholder="Passwort eingeben"><br><br>
+                        <label for="zubereitung">Zubereitungsanweisung</label><br>
+                        <textarea type="text" id="zubereitung" name="zubereitung" placeholder="Erkläre, wie das Gericht zubereitet wird"></textarea><br><br>
         
-                        <button type="button" id="addToDB">Registrieren</button><br>
-        
-                        <p id="bottomtextlogin">Du hast schon einen Account? Hier <a href="./login.html">einloggen</a></p><br>
+                        <button type="button" id="addNewRecipe">Rezept veröffentlichen</button><br><br>
                     </form>
             </div>
         </div>
-    </main>  
+    </main>
+    <footer id="footer"></footer>  
 </body>
 </html>

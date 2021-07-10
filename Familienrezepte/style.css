@@ -9,6 +9,10 @@ main {
     margin: auto;
 }
 
+footer {
+  height: 300px;
+}
+
 p, h3, h4 {
     font-family: Tahoma, sans-serif;
 }
@@ -107,6 +111,25 @@ h2 {
 #content {
     padding: 10px;
     text-align: center;
+}
+
+/* My Recipes */
+
+#zubereitung {
+  width: 170px;
+  height: 100px;
+}
+
+#newRecipe {
+  line-height: 1.5em;
+  font-family: Tahoma, sans-serif;
+}
+
+#myRecipesFlex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Login Box */
