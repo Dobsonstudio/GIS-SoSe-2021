@@ -1,3 +1,5 @@
+import { Interface } from "readline";
+
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     document.getElementById("buttonLogin").addEventListener("click", login);
@@ -10,7 +12,7 @@ namespace Rezepte_Server {
         url += "?" + query.toString();  
         let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
-
+ 
         if (responseText == "Login erfolgreich.") {
         window.location.href = "./allrecipes.html";
         } else {

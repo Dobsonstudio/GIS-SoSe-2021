@@ -1,6 +1,8 @@
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
+import { userInfo } from "os";
+import { url } from "inspector";
 
 export namespace Rezepte_Server {
     let mongoCollection: Mongo.Collection;
@@ -57,9 +59,9 @@ export namespace Rezepte_Server {
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
 
         } else if (quest.pathname == "/login") {
-            if (mongoCollection.findOne(questdata) == null) {
+            if (mongoCollection.findOne({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}) != null) {
                 _response.write("Login fehlgeschlagen.");
-            } else {
+            } else { 
                 _response.write("Login erfolgreich.");
             }
 

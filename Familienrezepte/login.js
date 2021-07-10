@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
