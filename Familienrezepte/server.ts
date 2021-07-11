@@ -98,8 +98,9 @@ export namespace Rezepte_Server {
             }
 
         if (quest.pathname == "/showAllRecipes") {
-                let userName: string = quest.username;
+                let userName: string = quest.searchParams.get("username");
                 console.log("From: " + userName);
+                console.log("localStorage:" + localStorage.getItem("username").toString());
                 
                 let collectionData: AllData[] = await userCollection.find({username: userName}).toArray();
                 //let collectionData: AllData[] = await recipeCollection.find().toArray();
