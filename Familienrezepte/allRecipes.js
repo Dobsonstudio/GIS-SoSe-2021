@@ -41,8 +41,8 @@ var Rezepte_Server;
                     "<br> Rezept: " + responseJSON[i].recipeName +
                     "<br> Zutaten: " + responseJSON[i].ingredient +
                     "<br> Zubereitung: " + responseJSON[i].tutorial + "<br>";
+            temp.appendChild(favButton);
             myRecipesFlex.appendChild(temp);
-            myRecipesFlex.appendChild(favButton);
         }
     }
 })(Rezepte_Server || (Rezepte_Server = {}));
