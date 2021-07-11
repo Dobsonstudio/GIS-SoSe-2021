@@ -89,7 +89,7 @@ export namespace Rezepte_Server {
         if (quest.pathname == "/showMyRecipes") {
                 let userName: string = quest.searchParams.get("username").split("?")[0].toString();
                 
-                let collectionData: AllData[] = await userCollection.find({authorName: userName}).toArray();
+                let collectionData: AllData[] = await recipeCollection.find({authorName: userName}).toArray();
                 //let collectionData: AllData[] = await recipeCollection.find().toArray();
                 let cDataJSON: string = JSON.stringify(collectionData);
                 _response.write(cDataJSON);
