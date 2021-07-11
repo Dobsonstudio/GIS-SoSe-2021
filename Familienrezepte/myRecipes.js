@@ -3,7 +3,7 @@ var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
     document.getElementById("addNewRecipe").addEventListener("click", addRecipe);
-    document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
+    document.getElementById("showAllRecipes").addEventListener("click", showMyRecipes);
     async function addRecipe() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";
@@ -19,7 +19,7 @@ var Rezepte_Server;
     function showResponseFunc(text) {
         showresponse.innerHTML = text;
     }
-    async function showAllRecipes() {
+    async function showMyRecipes() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";
         //let url: RequestInfo = "http://localhost:8100";
@@ -42,4 +42,4 @@ var Rezepte_Server;
         }
     }
 })(Rezepte_Server || (Rezepte_Server = {}));
-//# sourceMappingURL=recipes.js.map
+//# sourceMappingURL=myRecipes.js.map

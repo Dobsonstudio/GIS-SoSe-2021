@@ -1,7 +1,7 @@
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     document.getElementById("addNewRecipe").addEventListener("click", addRecipe);
-    document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
+    document.getElementById("showAllRecipes").addEventListener("click", showMyRecipes);
 
     async function addRecipe(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
@@ -21,7 +21,7 @@ namespace Rezepte_Server {
         showresponse.innerHTML = text;
     }
 
-    async function showAllRecipes(): Promise<void> {
+    async function showMyRecipes(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
         //let url: RequestInfo = "http://localhost:8100";
