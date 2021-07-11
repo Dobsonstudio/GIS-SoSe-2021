@@ -12,7 +12,7 @@ var Rezepte_Server;
         //let url: RequestInfo = "http://localhost:8100";
         let query = new URLSearchParams(formData);
         url += "/addToFavorites";
-        url += "?" + query.toString() + "&authorName=" + localStorage.getItem("username") +
+        url += "?" + query.toString() + "&userName=" + localStorage.getItem("username") +
             "$_id" + this.value;
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
@@ -35,6 +35,7 @@ var Rezepte_Server;
             let favButton = document.createElement("button");
             favButton.addEventListener("click", addToFavorites);
             favButton.value = responseJSON[i]._id;
+            favButton.name = "♡";
             temp.className = "databaseEntry";
             temp.innerHTML =
                 "Autor: " + responseJSON[i].authorName +

@@ -12,7 +12,7 @@ namespace Rezepte_Server {
         //let url: RequestInfo = "http://localhost:8100";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "/addToFavorites";
-        url += "?" + query.toString() + "&authorName=" + localStorage.getItem("username") + 
+        url += "?" + query.toString() + "&userName=" + localStorage.getItem("username") + 
         "$_id" + this.value;
         let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
@@ -38,6 +38,7 @@ namespace Rezepte_Server {
             let favButton: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
             favButton.addEventListener("click", addToFavorites);
             favButton.value = responseJSON[i]._id;
+            favButton.name = "♡";
         
             temp.className = "databaseEntry";
             temp.innerHTML =  
