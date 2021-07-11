@@ -95,8 +95,8 @@ var Rezepte_Server;
             _response.write(cDataJSON);
         }
         if (quest.pathname == "/addToFavorites") {
-            let userName = quest.searchParams.get("username").toString();
-            let _id = quest.searchParams.get("_id").toString();
+            let userName = quest.searchParams.get("username");
+            let _id = quest.searchParams.get("_id");
             console.log("userName: " + userName);
             console.log("id: " + _id);
             let userNameCheck = (await favCollection.find({ username: userName }).toArray()).length;

@@ -106,8 +106,8 @@ export namespace Rezepte_Server {
                 _response.write(cDataJSON);
             }
         if (quest.pathname == "/addToFavorites") {
-            let userName: string = quest.searchParams.get("username").toString();
-            let _id: string = quest.searchParams.get("_id").toString();
+            let userName: string = quest.searchParams.get("username");
+            let _id: string = quest.searchParams.get("_id");
             console.log("userName: " + userName);
             console.log("id: " + _id);
 
