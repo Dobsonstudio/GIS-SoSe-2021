@@ -35,7 +35,7 @@ var Rezepte_Server;
             let favButton = document.createElement("button");
             favButton.addEventListener("click", addToFavorites);
             favButton.value = responseJSON[i]._id;
-            favButton.name = "♡";
+            favButton.textContent = "♡";
             temp.className = "databaseEntry";
             temp.innerHTML =
                 "Autor: " + responseJSON[i].authorName +

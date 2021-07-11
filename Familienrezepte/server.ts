@@ -92,7 +92,6 @@ export namespace Rezepte_Server {
                 let userName: string = quest.searchParams.get("username").split("?")[0].toString();
                 
                 let collectionData: AllData[] = await recipeCollection.find({authorName: userName}).toArray();
-                //let collectionData: AllData[] = await recipeCollection.find().toArray();
                 let cDataJSON: string = JSON.stringify(collectionData);
                 _response.write(cDataJSON);
             }
@@ -120,6 +119,14 @@ export namespace Rezepte_Server {
                 _response.write("Das Rezept befindet sich bereits in deinen Favoriten.");
             }
             _response.end();  
+        }
+        if (quest.pathname == "/showFavs") {
+            let userName: string = quest.searchParams.get("username");
+
+            let collectionDataFav: AllData[] = await favCollection.find({userName: userName}).toArray();
+            let collectionData: AllData[] = await recipeCollection.find({_id: collectionDataFav}).toArray();
+            let cDataJSON: string = JSON.stringify(collectionData);
+            _response.write(cDataJSON);
         }
 
         _response.end();

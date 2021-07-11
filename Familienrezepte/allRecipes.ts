@@ -38,7 +38,7 @@ namespace Rezepte_Server {
             let favButton: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
             favButton.addEventListener("click", addToFavorites);
             favButton.value = responseJSON[i]._id;
-            favButton.name = "♡";
+            favButton.textContent = "♡";
         
             temp.className = "databaseEntry";
             temp.innerHTML =  
