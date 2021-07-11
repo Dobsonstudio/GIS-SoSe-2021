@@ -28,7 +28,7 @@ var Rezepte_Server;
         let query = new URLSearchParams(formData);
         url += "/showMyRecipes";
         url += "?" + query.toString();
-        url += "&" + userName;
+        url += "%" + userName;
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
         console.log("Retrieved JSON", JSON.parse(JSON.stringify(responseText)));
