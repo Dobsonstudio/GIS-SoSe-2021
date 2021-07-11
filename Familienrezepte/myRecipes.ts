@@ -1,5 +1,6 @@
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
+    let myRecipesFlex: HTMLDivElement = <HTMLDivElement>document.getElementById("myRecipesFlex");
     document.getElementById("addNewRecipe").addEventListener("click", addRecipe);
     document.getElementById("showMyRecipes").addEventListener("click", showMyRecipes);
 
@@ -43,7 +44,7 @@ namespace Rezepte_Server {
         "<br> Rezept: " + responseJSON[i].rezeptName +
         "<br> Zutaten: " + responseJSON[i].ingredient + 
         "<br> Zubereitung: " + responseJSON[i].zubereitung + "<br>";
-        showresponse.appendChild(temp);
+        myRecipesFlex.appendChild(temp);
         }
 
         interface NewRecipe {

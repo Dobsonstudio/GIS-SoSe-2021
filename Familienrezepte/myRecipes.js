@@ -2,6 +2,7 @@
 var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
+    let myRecipesFlex = document.getElementById("myRecipesFlex");
     document.getElementById("addNewRecipe").addEventListener("click", addRecipe);
     document.getElementById("showMyRecipes").addEventListener("click", showMyRecipes);
     async function addRecipe() {
@@ -38,7 +39,7 @@ var Rezepte_Server;
                     "<br> Rezept: " + responseJSON[i].rezeptName +
                     "<br> Zutaten: " + responseJSON[i].ingredient +
                     "<br> Zubereitung: " + responseJSON[i].zubereitung + "<br>";
-            showresponse.appendChild(temp);
+            myRecipesFlex.appendChild(temp);
         }
     }
 })(Rezepte_Server || (Rezepte_Server = {}));
