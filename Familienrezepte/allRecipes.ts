@@ -1,7 +1,6 @@
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     let myRecipesFlex: HTMLDivElement = <HTMLDivElement>document.getElementById("allRecipesFlex");
-    //document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
 
     window.onload = () => {
         console.log("page is fully loaded");

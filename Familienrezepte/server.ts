@@ -72,8 +72,7 @@ export namespace Rezepte_Server {
             } else {
                 _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
             }
-            _response.end();
-            //window.location.href = "./allrecipes.html";    
+            _response.end();  
         }
         
         if (quest.pathname == "/login") {
@@ -88,7 +87,7 @@ export namespace Rezepte_Server {
         }
         
         if (quest.pathname == "/showMyRecipes") {
-                let userName: string = quest.searchParams.get("username").split("?").toString();
+                let userName: string = quest.searchParams.get("username").split("?")[0].toString();
                 console.log("From: " + userName);
                 
                 let collectionData: AllData[] = await userCollection.find({username: userName}).toArray();

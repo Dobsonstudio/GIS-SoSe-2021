@@ -3,7 +3,6 @@ var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
     let myRecipesFlex = document.getElementById("allRecipesFlex");
-    //document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
     window.onload = () => {
         console.log("page is fully loaded");
         showAllRecipes();

@@ -67,7 +67,6 @@ var Rezepte_Server;
                 _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
             }
             _response.end();
-            //window.location.href = "./allrecipes.html";    
         }
         if (quest.pathname == "/login") {
             let checkUser = (await userCollection.find({ username: quest.searchParams.get("username"), password: quest.searchParams.get("password") }).toArray()).length;
@@ -79,7 +78,7 @@ var Rezepte_Server;
             }
         }
         if (quest.pathname == "/showMyRecipes") {
-            let userName = quest.searchParams.get("username").split("?").toString();
+            let userName = quest.searchParams.get("username").split("?")[0].toString();
             console.log("From: " + userName);
             let collectionData = await userCollection.find({ username: userName }).toArray();
             //let collectionData: AllData[] = await recipeCollection.find().toArray();
