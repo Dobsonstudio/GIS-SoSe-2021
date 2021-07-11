@@ -27,7 +27,7 @@ var Rezepte_Server;
         //let url: RequestInfo = "http://localhost:8100";
         let query = new URLSearchParams(formData);
         url += "/showMyRecipes";
-        url += "?" + userName;
+        url += "?username=" + userName;
         url += "?" + query.toString();
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();

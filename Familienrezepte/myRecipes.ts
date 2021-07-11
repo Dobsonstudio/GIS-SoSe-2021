@@ -29,7 +29,7 @@ namespace Rezepte_Server {
         //let url: RequestInfo = "http://localhost:8100";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "/showMyRecipes";
-        url += "?" + userName;
+        url += "?username=" + userName;
         url += "?" + query.toString();
         let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
