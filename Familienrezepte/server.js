@@ -78,7 +78,7 @@ var Rezepte_Server;
                 _response.write("Login fehlgeschlagen.");
             }
         }
-        if (quest.pathname == "/allrecipes") {
+        if (quest.pathname == "/showMyRecipes") {
             let collectionData = await recipeCollection.find().toArray();
             let cDataJSON = JSON.stringify(collectionData);
             _response.write(cDataJSON);

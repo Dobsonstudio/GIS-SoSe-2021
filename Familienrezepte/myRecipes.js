@@ -25,7 +25,7 @@ var Rezepte_Server;
         let url = "https://dobsonstudio2021.herokuapp.com";
         //let url: RequestInfo = "http://localhost:8100";
         let query = new URLSearchParams(formData);
-        url += "/showAllRecipes";
+        url += "/showMyRecipes";
         url += "?" + query.toString();
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();

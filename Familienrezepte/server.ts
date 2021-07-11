@@ -88,7 +88,7 @@ export namespace Rezepte_Server {
             }
         }
         
-        if (quest.pathname == "/allrecipes") {
+        if (quest.pathname == "/showMyRecipes") {
                 let collectionData: AllData[] = await recipeCollection.find().toArray();
                 let cDataJSON: string = JSON.stringify(collectionData);
                 _response.write(cDataJSON);

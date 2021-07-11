@@ -27,7 +27,7 @@ namespace Rezepte_Server {
         let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
         //let url: RequestInfo = "http://localhost:8100";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url += "/showAllRecipes";
+        url += "/showMyRecipes";
         url += "?" + query.toString();  
         let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
