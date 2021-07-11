@@ -7,6 +7,7 @@ namespace P_3_4Server {
     async function addToDB(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
+        //let url: RequestInfo = "http://localhost:8100";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "/addDB";
         url += "?" + query.toString();  
