@@ -97,6 +97,17 @@ export namespace Rezepte_Server {
                 _response.write(cDataJSON);
             }
 
+        if (quest.pathname == "/showAllRecipes") {
+                let userName: string = quest.username;
+                console.log("From: " + userName);
+                
+                let collectionData: AllData[] = await userCollection.find({username: userName}).toArray();
+                //let collectionData: AllData[] = await recipeCollection.find().toArray();
+                let cDataJSON: string = JSON.stringify(collectionData);
+                _response.write(cDataJSON);
+            }
+
+
         _response.end();
     }
 

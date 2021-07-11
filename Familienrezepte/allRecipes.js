@@ -3,30 +3,13 @@ var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
     let myRecipesFlex = document.getElementById("myRecipesFlex");
-    document.getElementById("addNewRecipe").addEventListener("click", addRecipe);
-    document.getElementById("showMyRecipes").addEventListener("click", showMyRecipes);
-    async function addRecipe() {
+    document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
+    async function showAllRecipes() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";
         //let url: RequestInfo = "http://localhost:8100";
         let query = new URLSearchParams(formData);
-        url += "/addNewRecipe";
-        url += "?" + query.toString() + "&authorName=" + localStorage.getItem("username");
-        let response = await fetch(url, { method: "get" });
-        let responseText = await response.text();
-        console.log(responseText);
-        showResponseFunc(responseText);
-    }
-    function showResponseFunc(text) {
-        showresponse.innerHTML = text;
-    }
-    async function showMyRecipes() {
-        let userName = localStorage.getItem("username");
-        let formData = new FormData(document.forms[0]);
-        let url = "https://dobsonstudio2021.herokuapp.com";
-        //let url: RequestInfo = "http://localhost:8100";
-        let query = new URLSearchParams(formData);
-        url += "/showMyRecipes";
+        url += "/showAllRecipes";
         url += "?" + query.toString();
         let response = await fetch(url, { method: "get" });
         let responseText = await response.text();
