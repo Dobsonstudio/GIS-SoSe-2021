@@ -70,6 +70,7 @@ export namespace Rezepte_Server {
             /*let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length);
             if (userTaken == 0)*/
             _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
+            window.location.href = "./allrecipes.html";
         /*} else {
             _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
             _response.end();*/
@@ -85,12 +86,12 @@ export namespace Rezepte_Server {
 
             }
         }
-
-        while (quest.pathname == "/allrecipes") {
-            let collectionData: AllData[] = await recipeCollection.find().toArray();
-            let cDataJSON: string = JSON.stringify(collectionData);
-            _response.write(cDataJSON);
-        }
+        
+        if (quest.pathname == "/allrecipes") {
+                let collectionData: AllData[] = await recipeCollection.find().toArray();
+                let cDataJSON: string = JSON.stringify(collectionData);
+                _response.write(cDataJSON);
+            }
 
         _response.end();
     }

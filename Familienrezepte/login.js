@@ -5,8 +5,8 @@ var Rezepte_Server;
     document.getElementById("buttonLogin").addEventListener("click", login);
     async function login() {
         let formData = new FormData(document.forms[0]);
-        //let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
-        let url = "http://localhost:8100";
+        let url = "https://dobsonstudio2021.herokuapp.com";
+        //let url: RequestInfo = "http://localhost:8100";
         let query = new URLSearchParams(formData);
         url += "/login";
         url += "?" + query.toString();

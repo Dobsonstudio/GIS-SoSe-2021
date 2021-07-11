@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./showAllRecipes.js" async></script>
 
     <title>Familienrezepte - Alle Rezepte</title>  
 </head>
@@ -30,6 +31,13 @@
             <div id="content">
                 <h3>Alle Rezepte</h3>
                 <p>Hier siehst du alle Rezepte, die von dir und anderen Usern hochgeladen wurden.</p><br>
+
+                <div id="allRecipesFlex">
+                    <div>
+                        <button type="button" id="showAllRecipes">Rezepte abrufen</button>
+                        <div id="response"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
