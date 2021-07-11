@@ -32,7 +32,7 @@ var Rezepte_Server;
         let responseJSON = JSON.parse(responseText);
         for (let i = 0; i < responseJSON.length; i++) {
             let temp = document.createElement("div");
-            let favButton = document.createElement("favButton");
+            let favButton = document.createElement("button");
             favButton.addEventListener("click", addToFavorites);
             favButton.value = responseJSON[i]._id;
             temp.className = "databaseEntry";
