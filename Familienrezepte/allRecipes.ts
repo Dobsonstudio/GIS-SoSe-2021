@@ -46,6 +46,7 @@ namespace Rezepte_Server {
             "<br> Zutaten: " + responseJSON[i].ingredient + 
             "<br> Zubereitung: " + responseJSON[i].tutorial + "<br>";
             myRecipesFlex.appendChild(temp);
+            myRecipesFlex.appendChild(favButton);
         }
 
         interface NewRecipe {
