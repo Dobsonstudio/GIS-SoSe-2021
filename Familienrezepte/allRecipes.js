@@ -1,11 +1,24 @@
 "use strict";
 var Rezepte_Server;
 (function (Rezepte_Server) {
-    let showresponse = document.getElementById("response");
+    let favAdded = document.getElementById("favAdded");
     let myRecipesFlex = document.getElementById("allRecipesFlex");
     window.onload = () => {
         showAllRecipes();
     };
+    async function addToFavorites() {
+        let formData = new FormData(document.forms[0]);
+        let url = "https://dobsonstudio2021.herokuapp.com";
+        //let url: RequestInfo = "http://localhost:8100";
+        let query = new URLSearchParams(formData);
+        url += "/addToFavorites";
+        url += "?" + query.toString() + "&authorName=" + localStorage.getItem("username") +
+            "$_id" + this.value;
+        let response = await fetch(url, { method: "get" });
+        let responseText = await response.text();
+        console.log("Fav: ", responseText);
+        favAdded.innerHTML = responseText;
+    }
     async function showAllRecipes() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";
@@ -19,6 +32,9 @@ var Rezepte_Server;
         let responseJSON = JSON.parse(responseText);
         for (let i = 0; i < responseJSON.length; i++) {
             let temp = document.createElement("div");
+            let favButton = document.createElement("favButton");
+            favButton.addEventListener("click", addToFavorites);
+            favButton.value = responseJSON[i]._id;
             temp.className = "databaseEntry";
             temp.innerHTML =
                 "Autor: " + responseJSON[i].authorName +

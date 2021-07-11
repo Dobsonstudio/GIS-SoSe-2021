@@ -103,7 +103,10 @@ export namespace Rezepte_Server {
                 }*/
                 _response.write(cDataJSON);
             }
-
+        if (quest.pathname == "/addToFavorites") {
+            let userName: string = quest.searchParams.get("username").split("$")[0].toString();
+            let _id: string = quest.searchParams.get("_id").split("?")[0].toString();
+        }
 
         _response.end();
     }
