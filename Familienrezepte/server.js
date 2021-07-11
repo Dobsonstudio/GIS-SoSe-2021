@@ -87,10 +87,7 @@ var Rezepte_Server;
             _response.write(cDataJSON);
         }
         if (quest.pathname == "/showAllRecipes") {
-            let userName = quest.searchParams.get("username");
-            console.log("From: " + userName);
-            let collectionData = await userCollection.find({ username: userName }).toArray();
-            //let collectionData: AllData[] = await recipeCollection.find().toArray();
+            let collectionData = await recipeCollection.find().toArray();
             let cDataJSON = JSON.stringify(collectionData);
             _response.write(cDataJSON);
         }
