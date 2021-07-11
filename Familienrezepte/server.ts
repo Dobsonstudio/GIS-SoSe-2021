@@ -66,14 +66,15 @@ export namespace Rezepte_Server {
         }
 
         if (quest.pathname == "/addDB") {
-            userCollection.insertOne(questdata);
-            /*let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length);
-            if (userTaken == 0)*/
-            _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
-            //window.location.href = "./allrecipes.html";
-        /*} else {
-            _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
-            _response.end();*/
+            let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length);
+            if (userTaken == 0) {
+                userCollection.insertOne(questdata);
+                _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
+            } else {
+                _response.write("Der Nutzername ist leider schon vergeben. Versuche es mit einem anderen.");
+            }
+            _response.end();
+            //window.location.href = "./allrecipes.html";    
         }
         
         if (quest.pathname == "/login") {
