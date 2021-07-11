@@ -1,6 +1,6 @@
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
-    let myRecipesFlex: HTMLDivElement = <HTMLDivElement>document.getElementById("myRecipesFlex");
+    let myRecipesFlex: HTMLDivElement = <HTMLDivElement>document.getElementById("allRecipesFlex");
     document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
 
     async function showAllRecipes(): Promise<void> {

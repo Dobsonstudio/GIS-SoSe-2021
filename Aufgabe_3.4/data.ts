@@ -42,7 +42,6 @@ namespace P_3_4Server {
         "<br> E-Mail: " + responseJSON[i].email + "<br>";
         showresponse.appendChild(temp);
         }
-
     }
     function showResponseFunc(text: string): void {
         showresponse.innerHTML = text;
