@@ -7,6 +7,7 @@ var Rezepte_Server;
 (function (Rezepte_Server) {
     let userCollection;
     let recipeCollection;
+    let favCollection;
     let mongoDatabase = "mongodb+srv://dobsonstudio:apfelsaft@gis-sose2021.1lic1.mongodb.net/rezepte?retryWrites=true&w=majority";
     let port = Number(process.env.PORT);
     if (!port)
@@ -23,6 +24,7 @@ var Rezepte_Server;
         await mongoClient.connect();
         userCollection = mongoClient.db("rezepte").collection("rezepteUser");
         recipeCollection = mongoClient.db("rezepte").collection("rezepte");
+        favCollection = mongoClient.db("rezpte").collection("favorites");
     }
     function startServer(port) {
         console.log("Starting server");
@@ -94,7 +96,19 @@ var Rezepte_Server;
         }
         if (quest.pathname == "/addToFavorites") {
             let userName = quest.searchParams.get("username").split("$")[0].toString();
-            let _id = quest.searchParams.get("_id").split("?")[0].toString();
+            let _id = quest.searchParams.get("_id").toString();
+            console.log("userName: " + userName);
+            console.log("id: " + _id);
+            let userNameCheck = (await favCollection.find({ username: userName }).toArray()).length;
+            let recipeIdCheck = (await favCollection.find({ _id: _id }).toArray()).length;
+            if (userNameCheck == 0 && recipeIdCheck == 0) {
+                favCollection.insertOne(questdata);
+                _response.write("Das Rezepte wurde erfolgreich zu deinen Favoriten hinzugefügt.");
+            }
+            else {
+                _response.write("Das Rezept befindet sich bereits in deinen Favoriten.");
+            }
+            _response.end();
         }
         _response.end();
     }
