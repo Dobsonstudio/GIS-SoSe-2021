@@ -132,6 +132,22 @@ h2 {
   justify-content: center;
 }
 
+#allRecipesFlex {
+  flex: 30%;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-around;
+  font-family: Tahoma, sans-serif;
+  text-align: left;
+}
+
+.databaseEntry {
+  width: 300px;
+  margin: auto;
+  padding: 25px;
+}
+
 /* Login Box */
 
 #loginblock {

@@ -49,7 +49,7 @@ export namespace Rezepte_Server {
 
         let questdataRecipes: NewRecipe = {
         authorName: quest.searchParams.get("authorName"),
-        rezeptName: quest.searchParams.get("rezeptName"), 
+        recipeName: quest.searchParams.get("recipeName"), 
         ingredient: [
         quest.searchParams.get("ingredient1"), quest.searchParams.get("ingredient2"), 
         quest.searchParams.get("ingredient3"), quest.searchParams.get("ingredient4"), 
@@ -57,7 +57,7 @@ export namespace Rezepte_Server {
         quest.searchParams.get("ingredient7"), quest.searchParams.get("ingredient8"), 
         quest.searchParams.get("ingredient9"), quest.searchParams.get("ingredient10")
         ], 
-        zubereitung: quest.searchParams.get("zubereitung")};
+        tutorial: quest.searchParams.get("tutorial")};
         
         if (quest.pathname == "/addNewRecipe") {
             recipeCollection.insertOne(questdataRecipes);
@@ -100,6 +100,9 @@ export namespace Rezepte_Server {
         if (quest.pathname == "/showAllRecipes") {
                 let collectionData: AllData[] = await recipeCollection.find().toArray();
                 let cDataJSON: string = JSON.stringify(collectionData);
+                /*if (collectionData == undefined) {
+                    display == false;
+                }*/
                 _response.write(cDataJSON);
             }
 
@@ -114,9 +117,9 @@ export namespace Rezepte_Server {
 
     interface NewRecipe {
         authorName: string;
-        rezeptName: string;
+        recipeName: string;
         ingredient: string[];
-        zubereitung: string;
+        tutorial: string;
     }
 
     interface AllData extends NewRecipe {

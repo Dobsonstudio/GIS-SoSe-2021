@@ -21,18 +21,18 @@ namespace Rezepte_Server {
         
         temp.className = "databaseEntry";
         temp.innerHTML =  
-        "<br> Autor: " + responseJSON[i].authorName +
-        "<br> Rezept: " + responseJSON[i].rezeptName +
+        "Autor: " + responseJSON[i].authorName +
+        "<br> Rezept: " + responseJSON[i].recipeName +
         "<br> Zutaten: " + responseJSON[i].ingredient + 
-        "<br> Zubereitung: " + responseJSON[i].zubereitung + "<br>";
+        "<br> Zubereitung: " + responseJSON[i].tutorial + "<br>";
         myRecipesFlex.appendChild(temp);
         }
 
         interface NewRecipe {
             authorName: string;
-            rezeptName: string;
+            recipeName: string;
             ingredient: string[];
-            zubereitung: string;
+            tutorial: string;
         }
 
         interface RecipeData extends NewRecipe {

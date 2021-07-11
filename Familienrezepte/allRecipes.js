@@ -19,10 +19,10 @@ var Rezepte_Server;
             let temp = document.createElement("div");
             temp.className = "databaseEntry";
             temp.innerHTML =
-                "<br> Autor: " + responseJSON[i].authorName +
-                    "<br> Rezept: " + responseJSON[i].rezeptName +
+                "Autor: " + responseJSON[i].authorName +
+                    "<br> Rezept: " + responseJSON[i].recipeName +
                     "<br> Zutaten: " + responseJSON[i].ingredient +
-                    "<br> Zubereitung: " + responseJSON[i].zubereitung + "<br>";
+                    "<br> Zubereitung: " + responseJSON[i].tutorial + "<br>";
             myRecipesFlex.appendChild(temp);
         }
     }

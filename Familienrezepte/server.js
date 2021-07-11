@@ -43,7 +43,7 @@ var Rezepte_Server;
         let questdata = { username: quest.searchParams.get("username"), password: quest.searchParams.get("password") };
         let questdataRecipes = {
             authorName: quest.searchParams.get("authorName"),
-            rezeptName: quest.searchParams.get("rezeptName"),
+            recipeName: quest.searchParams.get("recipeName"),
             ingredient: [
                 quest.searchParams.get("ingredient1"), quest.searchParams.get("ingredient2"),
                 quest.searchParams.get("ingredient3"), quest.searchParams.get("ingredient4"),
@@ -51,7 +51,7 @@ var Rezepte_Server;
                 quest.searchParams.get("ingredient7"), quest.searchParams.get("ingredient8"),
                 quest.searchParams.get("ingredient9"), quest.searchParams.get("ingredient10")
             ],
-            zubereitung: quest.searchParams.get("zubereitung")
+            tutorial: quest.searchParams.get("tutorial")
         };
         if (quest.pathname == "/addNewRecipe") {
             recipeCollection.insertOne(questdataRecipes);
@@ -89,6 +89,9 @@ var Rezepte_Server;
         if (quest.pathname == "/showAllRecipes") {
             let collectionData = await recipeCollection.find().toArray();
             let cDataJSON = JSON.stringify(collectionData);
+            /*if (collectionData == undefined) {
+                display == false;
+            }*/
             _response.write(cDataJSON);
         }
         _response.end();
