@@ -3,7 +3,11 @@ var Rezepte_Server;
 (function (Rezepte_Server) {
     let showresponse = document.getElementById("response");
     let myRecipesFlex = document.getElementById("allRecipesFlex");
-    document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
+    //document.getElementById("showAllRecipes").addEventListener("click", showAllRecipes);
+    window.onload = () => {
+        console.log("page is fully loaded");
+        showAllRecipes();
+    };
     async function showAllRecipes() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";

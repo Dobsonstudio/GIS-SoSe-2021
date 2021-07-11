@@ -133,8 +133,6 @@ h2 {
 }
 
 #allRecipesFlex {
-  flex: 30%;
-  width: 800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-around;
@@ -143,7 +141,7 @@ h2 {
 }
 
 .databaseEntry {
-  width: 300px;
+  width: 250px;
   margin: auto;
   padding: 25px;
 }
