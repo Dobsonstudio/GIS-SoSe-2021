@@ -79,7 +79,9 @@ var Rezepte_Server;
             }
         }
         if (quest.pathname == "/showMyRecipes") {
-            let collectionData = await recipeCollection.find().toArray();
+            let userName = quest.pathname.split("&").toString();
+            let collectionData = await userCollection.find({ username: userName }).toArray();
+            //let collectionData: AllData[] = await recipeCollection.find().toArray();
             let cDataJSON = JSON.stringify(collectionData);
             _response.write(cDataJSON);
         }

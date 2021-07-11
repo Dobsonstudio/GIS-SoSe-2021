@@ -1,5 +1,4 @@
 import * as Http from "http";
-import * as Url from "url";
 import * as Mongo from "mongodb";
 
 export namespace Rezepte_Server {
@@ -66,7 +65,7 @@ export namespace Rezepte_Server {
         }
 
         if (quest.pathname == "/addDB") {
-            let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length);
+            let userTaken: number = (await userCollection.find({username: quest.searchParams.get("username")}).toArray()).length;
             if (userTaken == 0) {
                 userCollection.insertOne(questdata);
                 _response.write("Dein Account wurde erfolgreich erstellt. Du kannst dich nun einloggen.");
@@ -78,7 +77,7 @@ export namespace Rezepte_Server {
         }
         
         if (quest.pathname == "/login") {
-            let checkUser: number = (await userCollection.find({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}).toArray()).length);
+            let checkUser: number = (await userCollection.find({username: quest.searchParams.get("username"), password: quest.searchParams.get("password")}).toArray()).length;
         
             if (checkUser == 1) {
                 _response.write("Login erfolgreich.");
@@ -89,7 +88,10 @@ export namespace Rezepte_Server {
         }
         
         if (quest.pathname == "/showMyRecipes") {
-                let collectionData: AllData[] = await recipeCollection.find().toArray();
+                let userName: string = quest.pathname.split("&").toString();
+                
+                let collectionData: AllData[] = await userCollection.find({username: userName}).toArray();
+                //let collectionData: AllData[] = await recipeCollection.find().toArray();
                 let cDataJSON: string = JSON.stringify(collectionData);
                 _response.write(cDataJSON);
             }
