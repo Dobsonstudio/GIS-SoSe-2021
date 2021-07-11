@@ -79,7 +79,7 @@ var Rezepte_Server;
             }
         }
         if (quest.pathname == "/showMyRecipes") {
-            let userName = quest.searchParams.get("username");
+            let userName = quest.searchParams.get("username").substring(0, "?");
             console.log("From: " + userName);
             let collectionData = await userCollection.find({ username: userName }).toArray();
             //let collectionData: AllData[] = await recipeCollection.find().toArray();
@@ -87,7 +87,7 @@ var Rezepte_Server;
             _response.write(cDataJSON);
         }
         if (quest.pathname == "/showAllRecipes") {
-            let userName = quest.searchParams.get("username");
+            let userName = quest.searchParams.get("username").split("?").toString();
             console.log("From: " + userName);
             let collectionData = await userCollection.find({ username: userName }).toArray();
             //let collectionData: AllData[] = await recipeCollection.find().toArray();
