@@ -1,7 +1,7 @@
 namespace Rezepte_Server {
     let showresponse: HTMLDivElement = <HTMLDivElement>document.getElementById("response");
     document.getElementById("addNewRecipe").addEventListener("click", addRecipe);
-    document.getElementById("showAllRecipes").addEventListener("click", showMyRecipes);
+    document.getElementById("showMyRecipes").addEventListener("click", showMyRecipes);
 
     async function addRecipe(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
