@@ -4,8 +4,8 @@ namespace Rezepte_Server {
 
     async function addRecipe(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        //let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
-        let url: RequestInfo = "http://localhost:8100";
+        let url: RequestInfo = "https://dobsonstudio2021.herokuapp.com";
+        //let url: RequestInfo = "http://localhost:8100";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "/addNewRecipe";
         url += "?" + query.toString() + "&authorName=" + localStorage.getItem("username");  
