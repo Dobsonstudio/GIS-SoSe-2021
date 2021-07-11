@@ -4,7 +4,9 @@ var Rezepte_Server;
     let showresponse = document.getElementById("response");
     let myRecipesFlex = document.getElementById("myRecipesFlex");
     document.getElementById("addNewRecipe").addEventListener("click", addRecipe);
-    document.getElementById("showMyRecipes").addEventListener("click", showMyRecipes);
+    window.onload = () => {
+        showMyRecipes();
+    };
     async function addRecipe() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dobsonstudio2021.herokuapp.com";

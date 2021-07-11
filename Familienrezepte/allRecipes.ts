@@ -3,7 +3,6 @@ namespace Rezepte_Server {
     let myRecipesFlex: HTMLDivElement = <HTMLDivElement>document.getElementById("allRecipesFlex");
 
     window.onload = () => {
-        console.log("page is fully loaded");
         showAllRecipes();
       };
 

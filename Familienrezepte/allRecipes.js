@@ -4,7 +4,6 @@ var Rezepte_Server;
     let showresponse = document.getElementById("response");
     let myRecipesFlex = document.getElementById("allRecipesFlex");
     window.onload = () => {
-        console.log("page is fully loaded");
         showAllRecipes();
     };
     async function showAllRecipes() {
